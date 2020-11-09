@@ -1,5 +1,3 @@
-require('./.prettierrc.js');
-
 module.exports = {
   env: {
     es6: true,
@@ -7,7 +5,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:import/recommended', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:import/recommended', 'plugin:prettier/recommended'],
   plugins: ['import', 'prettier'],
   parser: 'babel-eslint',
   parserOptions: {

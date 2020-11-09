@@ -1,29 +1,26 @@
 {
-  "name": "seogi",
-  "version": "0.0.14",
-  "description": "This is the library that improved native console API",
+  "name": "array-organizer",
+  "version": "0.0.1",
+  "description": "",
   "keywords": [
-    "seogi",
-    "console",
-    "log",
-    "libray"
+    "array"
   ],
   "main": "./index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server --config webpack.config.js",
     "webpack": "webpack --config webpack.config.js",
     "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
+    "start:node": "babel-node ./examples",
     "build": "npm run clean && npm run lint && npm run test && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
     "deploy": "npm run build && npm publish",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**' --fix",
     "clean": "rimraf dist",
-    "examples": "npm run build && node ./examples/node/index.js",
     "bundlesize": "bundlesize"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohwa/seogi.git"
+    "url": "git+https://github.com/mohwa/array-organizer.git"
   },
   "author": {
     "name": "mohwa",
@@ -32,7 +29,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mohwa/seogi/issues",
+    "url": "https://github.com/mohwa/array-organizer/issues",
     "email": "yanione2@gmail.com"
   },
   "files": [
@@ -40,18 +37,12 @@
     "index.js",
     "README.md"
   ],
-  "homepage": "https://github.com/mohwa/seogi#readme",
-  "dependencies": {
-    "chalk": "^4.1.0"
-  },
+  "homepage": "https://github.com/mohwa/array-organizer#readme",
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/node": "^7.12.1",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
@@ -79,11 +70,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,md}": [
-      "prettier --write"
-    ],
-    "*.{js}": [
-      "eslint"
+    "*.{js, md}": [
+      "eslint --fix",
+      "git add"
     ]
   },
   "engines": {
@@ -91,12 +80,20 @@
   },
   "bundlesize": [
     {
-      "path": "./dist/seogi.js",
+      "path": "./dist/arrayOrganizer.js",
       "maxSize": "10 kB"
     },
     {
-      "path": "./dist/seogi.min.js",
+      "path": "./dist/arrayOrganizer.min.js",
       "maxSize": "5 kB"
     }
-  ]
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 version",
+    "not ie <= 8"
+  ],
+  "dependencies": {
+    "emnida": "0.0.8"
+  }
 }

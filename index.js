@@ -1,1 +1,1 @@
-module.exports = require('./dist/seogi');
+module.exports = require('./dist/arrayOrganizer');
