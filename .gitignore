@@ -1,0 +1,17 @@
+# Dependency directories
+node_modules
+
+# log
+*.log
+npm-debug.log
+
+# IDE
+.DS_STORE
+.idea
+*.iml
+.vscode
+
+# output
+.out
+dist
+examples/

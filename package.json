@@ -1,0 +1,99 @@
+{
+  "name": "array-organizer",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "array"
+  ],
+  "main": "./index.js",
+  "scripts": {
+    "webpack-dev-server": "webpack-dev-server --config webpack.config.js",
+    "webpack": "webpack --config webpack.config.js",
+    "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
+    "start:node": "babel-node ./examples",
+    "build": "npm run clean && npm run lint && npm run test && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
+    "deploy": "npm run build && npm publish",
+    "test": "jest --config jest.config.js",
+    "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
+    "clean": "rimraf dist",
+    "bundlesize": "bundlesize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohwa/array-organizer.git"
+  },
+  "author": {
+    "name": "mohwa",
+    "email": "yanione2@gmail.com",
+    "url": ""
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohwa/array-organizer/issues",
+    "email": "yanione2@gmail.com"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "README.md"
+  ],
+  "homepage": "https://github.com/mohwa/array-organizer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/preset-env": "^7.6.2",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-rewire": "^1.2.0",
+    "bundlesize": "^0.18.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.8",
+    "jest": "^26.4.2",
+    "lint-staged": "^9.4.2",
+    "prettier-eslint": "^9.0.0",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js, md}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/arrayOrganizer.js",
+      "maxSize": "10 kB"
+    },
+    {
+      "path": "./dist/arrayOrganizer.min.js",
+      "maxSize": "5 kB"
+    }
+  ],
+  "browserslist": [
+    "> 1%",
+    "last 2 version",
+    "not ie <= 8"
+  ],
+  "dependencies": {
+    "emnida": "0.0.8"
+  }
+}
