@@ -14,7 +14,7 @@
     "build": "npm run clean && npm run lint && npm run test && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
     "deploy": "npm run build && npm publish",
     "test": "jest --config jest.config.js",
-    "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**' --fix",
+    "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
     "clean": "rimraf dist",
     "bundlesize": "bundlesize"
   },
