@@ -12,8 +12,8 @@ const { PHASE, ACTION } = process.env;
 const isDev = PHASE === 'DEV';
 const isDevServer = ACTION === 'DEV_SERVER';
 const mode = isDev ? 'development' : 'production';
-const libPath = resolve('lib', 'index.js');
-const examplePath = resolve('examples', 'index.js');
+const libPath = resolve('lib');
+const examplesPath = resolve('examples');
 
 module.exports = {
   context: ROOT_PATH,
@@ -21,7 +21,7 @@ module.exports = {
   mode,
   entry: {
     arrayOrganizer: libPath,
-    ...(isDevServer ? { index: examplePath } : {}),
+    ...(isDevServer ? { index: examplesPath } : {}),
   },
   output: {
     path: OUTPUT_PATH,
@@ -40,7 +40,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [libPath, examplePath],
+        include: [libPath, examplesPath],
         options: {
           configFile: resolve('.babelrc'),
         },

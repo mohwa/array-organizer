@@ -1,7 +1,7 @@
 {
   "name": "array-organizer",
   "version": "0.0.1",
-  "description": "",
+  "description": "easy and simple array utils",
   "keywords": [
     "array"
   ],
@@ -11,7 +11,7 @@
     "webpack": "webpack --config webpack.config.js",
     "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
     "start:node": "babel-node ./examples",
-    "build": "npm run clean && npm run lint && npm run test && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
+    "build": "npm run clean && npm run lint && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
     "deploy": "npm run build && npm publish",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' 'tests/**/*' --fix",
@@ -62,7 +62,8 @@
     "rimraf": "^3.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.8.2"
+    "webpack-dev-server": "^3.8.2",
+    "emnida": "0.0.8"
   },
   "husky": {
     "hooks": {
@@ -92,8 +93,5 @@
     "> 1%",
     "last 2 version",
     "not ie <= 8"
-  ],
-  "dependencies": {
-    "emnida": "0.0.8"
-  }
+  ]
 }
