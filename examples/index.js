@@ -1,10 +1,19 @@
-import { toArray, forEach, reduce } from '../lib';
+import { toArray, of, forEach, reduce, concat, copyWithin, replace } from '../lib';
 
 console.log(toArray('test'));
 console.log(toArray([1, 2, 3]));
 console.log(toArray({ x: 1, y: 2, z: 3 }));
 console.log(toArray(undefined));
 console.log(toArray(null));
+
+console.log(of(1, 2, 3, 4));
+console.log(of({ x: 1 }, { x: 2 }, { x: 3 }));
+
+console.log(concat([1], [2], [3], [4]));
+console.log(concat([1], { x: 1 }, { x: 2 }, { x: 3 }));
+
+console.log(copyWithin([1, '2', 3], '2', 2));
+console.log(replace([1, 2, 2, 3, 4, 5], 2, 4));
 
 if (window.Map) {
   const m1 = new Map();
