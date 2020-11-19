@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "easy and simple array utils",
   "keywords": [
     "array"
@@ -51,7 +51,7 @@
     "bundlesize": "^0.18.0",
     "cross-env": "^6.0.3",
     "documentation": "^13.1.0",
-    "emnida": "^1.0.15",
+    "emnida": "^1.0.19",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.4.0",
     "eslint-import-resolver-webpack": "^0.11.1",
