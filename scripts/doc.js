@@ -17,7 +17,7 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
       .then(output => {
         streamArray(output).pipe(vfs.dest('./docs'));
 
-        const lastCommandArgs = [['push', '--force']];
+        const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
         lastCommandArgs.forEach(v => {
           spawnSync('git', v, { stdio: 'inherit', shell: true });

@@ -33,12 +33,7 @@
     //
     // Tests -webkit, -moz and -o prefixes. Modified from StackOverflow:
     // http://stackoverflow.com/questions/16625140/js-feature-detection-to-detect-the-usage-of-webkit-calc-over-calc/16625167#16625167
-    var calc = ([
-      '',
-        '-webkit-',
-        '-moz-',
-        '-o-',
-    ]--
+    var calc = (['', '-webkit-', '-moz-', '-o-']
         .filter(function (prefix) {
             var el = document.createElement('div');
             el.style.cssText = "width:" + prefix + "calc(9px)";

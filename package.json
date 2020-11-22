@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "0.0.6",
+  "version": "0.0.4",
   "description": "easy and simple array utils",
   "keywords": [
     "array"
@@ -12,7 +12,7 @@
     "start": "npm run clean && cross-env PHASE=DEV ACTION=DEV_SERVER webpack-dev-server",
     "start:node": "babel-node ./examples",
     "build": "npm run clean && cross-env PHASE=DEV ACTION=BUILD npm run webpack && cross-env PHASE=PUBLISH ACTION=BUILD npm run webpack",
-    "deploy": "npm run lint && npm run build && npm publish && npm run clean",
+    "deploy": "npm run lint && npm run build && npm run doc && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' --fix",
     "clean": "rimraf dist",
