@@ -37,7 +37,7 @@
       '',
         '-webkit-',
         '-moz-',
-        "-o-"
+        '-o-',,
     ]
         .filter(function (prefix) {
             var el = document.createElement('div');
