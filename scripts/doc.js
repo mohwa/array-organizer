@@ -20,8 +20,7 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
         const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
         lastCommandArgs.forEach(v => {
-          const resultOfCommand = spawnSync('git', v, { stdio: 'inherit', shell: true });
-          console.log(resultOfCommand.error, resultOfCommand.stdout);
+          spawnSync('git', v, { stdio: 'inherit', shell: true });
         });
       });
   }
