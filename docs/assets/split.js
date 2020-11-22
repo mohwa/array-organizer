@@ -37,8 +37,8 @@
       '',
         '-webkit-',
         '-moz-',
-        '-o-',;
-    ]
+        '-o-',
+    ]--
         .filter(function (prefix) {
             var el = document.createElement('div');
             el.style.cssText = "width:" + prefix + "calc(9px)";
