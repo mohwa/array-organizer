@@ -1,3 +1,4 @@
+import { spawnSync } from 'child_process';
 import path from 'path';
 import documentation from 'documentation';
 import streamArray from 'stream-array';
@@ -15,6 +16,13 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
       .then(documentation.formats.html)
       .then(output => {
         streamArray(output).pipe(vfs.dest('./docs'));
+
+        const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
+
+        lastCommandArgs.forEach(v => {
+          const resultOfCommand = spawnSync('git', v, { stdio: 'inherit', shell: true });
+          console.log(resultOfCommand.error, resultOfCommand.stdout);
+        });
       });
   }
 });
