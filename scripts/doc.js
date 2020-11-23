@@ -17,6 +17,8 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
       .then(output => {
         streamArray(output).pipe(vfs.dest('./docs'));
 
+        console.log(streamArray.on);
+
         const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
         lastCommandArgs.forEach(v => {
