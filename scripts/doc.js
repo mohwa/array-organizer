@@ -21,9 +21,10 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
         reader.on('end', () => {
           const lastCommandArgs = [['pull'], ['add', '.'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
-          lastCommandArgs.forEach(v => {
-            spawnSync('git', v, { stdio: 'inherit', shell: true });
-          });
+          spawnSync('git', lastCommandArgs[0], { stdio: 'inherit', shell: true });
+          spawnSync('git', lastCommandArgs[1], { stdio: 'inherit', shell: true });
+          spawnSync('git', lastCommandArgs[2], { stdio: 'inherit', shell: true });
+          spawnSync('git', lastCommandArgs[3], { stdio: 'inherit', shell: true });
         });
       });
   }
