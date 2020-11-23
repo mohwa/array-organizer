@@ -1,5 +1,6 @@
 import { spawnSync } from 'child_process';
 import path from 'path';
+import process from 'process';
 import documentation from 'documentation';
 import streamArray from 'stream-array';
 import vfs from 'vinyl-fs';
@@ -19,12 +20,14 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
 
         reader.pipe(vfs.dest('./docs'));
         reader.on('end', () => {
-          const lastCommandArgs = [['pull'], ['add', '.'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
+          const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
-          spawnSync('git', lastCommandArgs[0], { stdio: 'inherit', shell: true });
-          spawnSync('git', lastCommandArgs[1], { stdio: 'inherit', shell: true });
-          spawnSync('git', lastCommandArgs[2], { stdio: 'inherit', shell: true });
-          spawnSync('git', lastCommandArgs[3], { stdio: 'inherit', shell: true });
+          process.nextTick(() => {
+            spawnSync('git', lastCommandArgs[0], { stdio: 'inherit', shell: true });
+            spawnSync('git', lastCommandArgs[1], { stdio: 'inherit', shell: true });
+            spawnSync('git', lastCommandArgs[2], { stdio: 'inherit', shell: true });
+            spawnSync('git', lastCommandArgs[3], { stdio: 'inherit', shell: true });
+          });
         });
       });
   }
