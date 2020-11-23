@@ -1,9 +1,13 @@
 {
   "name": "array-organizer",
-  "version": "0.0.4",
-  "description": "easy and simple array utils",
+  "version": "0.0.5",
+  "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
-    "array"
+    "array",
+    "object",
+    "array data",
+    "polyfill",
+    "array utils"
   ],
   "main": "./index.js",
   "scripts": {
