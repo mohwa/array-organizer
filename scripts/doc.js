@@ -15,14 +15,15 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
       .build(filePaths, { shallow: true })
       .then(documentation.formats.html)
       .then(output => {
-        streamArray(output).pipe(vfs.dest('./docs'));
+        const reader = streamArray(output);
 
-        console.log(streamArray.on);
+        reader.pipe(vfs.dest('./docs'));
+        reader.on('end', () => {
+          const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
-        const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
-
-        lastCommandArgs.forEach(v => {
-          spawnSync('git', v, { stdio: 'inherit', shell: true });
+          lastCommandArgs.forEach(v => {
+            spawnSync('git', v, { stdio: 'inherit', shell: true });
+          });
         });
       });
   }
