@@ -25,7 +25,7 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
             lastCommandArgs.forEach(v => {
               spawnSync('git', v, { stdio: 'inherit', shell: true });
             });
-          });
+          }, 500);
         });
       });
   }
