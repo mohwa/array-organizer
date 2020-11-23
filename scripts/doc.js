@@ -19,7 +19,7 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
 
         reader.pipe(vfs.dest('./docs'));
         reader.on('end', () => {
-          const lastCommandArgs = [['pull'], ['add'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
+          const lastCommandArgs = [['pull'], ['add', '.'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
           lastCommandArgs.forEach(v => {
             spawnSync('git', v, { stdio: 'inherit', shell: true });
