@@ -21,30 +21,7 @@ This library can use to handling data of an array type with required utility wit
  This function convert an argument like an array like object or an iterable object to an array object
  
  ```javascript
- import {
-   toArray,
-   of,
-   copyWithin,
-   fill,
-   filter,
-   find,
-   findIndex,
-   search,
-   searchIndex,
-   flat,
-   flatMap,
-   lastIndexOf,
-   asc,
-   desc,
-   splice,
-   preInsert,
-   insert,
-   replace,
-   remove,
-   removeAll,
-   lastIndex,
-   shuffle,
- } from 'array-organizer';
+ import { toArray } from 'array-organizer';
  
  toArray(''); // []
  // for an array like object
