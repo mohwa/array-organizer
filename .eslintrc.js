@@ -36,10 +36,4 @@ module.exports = {
     ],
     'import/newline-after-import': 'error',
   },
-
-  settings: {
-    'import/resolver': {
-      webpack: 'webpack.config.js',
-    },
-  },
 };
