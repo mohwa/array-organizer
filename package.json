@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
     "array",
@@ -11,6 +11,7 @@
   ],
   "module": "dist/array-organizer.esm.js",
   "main": "dist/array-organizer.js",
+  "sideEffects": false,
   "scripts": {
     "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
     "start:node": "babel-node ./examples",
