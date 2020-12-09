@@ -13,7 +13,8 @@ export function mergeEntryConfig(options = {}) {
   return {
     input: 'lib/index.js',
     output: {
-      interop: true,
+      freeze: false,
+      interop: false,
       sourcemap: true,
       ...output,
     },
