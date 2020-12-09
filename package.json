@@ -20,7 +20,6 @@
     "test": "jest --config jest.config.js",
     "lint": "eslint 'examples/**/*' 'lib/**/*' --fix",
     "clean": "rimraf dist",
-    "bundlesize": "bundlesize",
     "doc": "babel-node scripts/doc.js"
   },
   "repository": {
