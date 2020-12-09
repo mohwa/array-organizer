@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
     "array",
@@ -39,7 +39,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE.md"
   ],
   "homepage": "https://github.com/mohwa/array-organizer#readme",
   "dependencies": {
