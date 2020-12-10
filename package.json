@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
     "array",
@@ -43,19 +43,18 @@
   ],
   "homepage": "https://github.com/mohwa/array-organizer#readme",
   "dependencies": {
-    "emnida": "^1.1.7"
+    "emnida": "^1.1.12"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.1",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
-    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-env": "^7.12.10",
     "@rollup/plugin-html": "^0.2.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
-    "babel-plugin-rewire": "^1.2.0",
     "cross-env": "^6.0.3",
     "documentation": "^13.1.0",
     "eslint": "^6.8.0",
