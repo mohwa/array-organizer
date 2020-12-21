@@ -4,7 +4,7 @@
 
 This library can use to handling data of an array type with required utility with polyfill
 
-> This library will be doing polyfill for which feature which is not supported on some browsers
+> This library will be doing polyfill for feature which is not supported on some browser
 
 [API Documentation](http://mohwa.github.io/array-organizer)
  
