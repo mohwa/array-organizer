@@ -21,6 +21,10 @@ import {
   lastIndex,
   shuffle,
   includes,
+  deepFind,
+  deepSearch,
+  ascBy,
+  descBy,
 } from '../lib';
 
 const { isNumber } = type;
@@ -109,3 +113,60 @@ console.log(removeAll([1, 2, 3, 4], 1));
 
 console.log(lastIndex([1, 2, 3, 4])); // 3
 console.log(shuffle([1, 2, 3, 4])); // random
+
+console.log(
+  deepFind(
+    [
+      { x: 1, y: [{ yy: 44 }] },
+      { x: 1, y: 5, z: { yy: 33 } },
+      { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }] },
+    ],
+    v => v === -20
+  )
+);
+// c: {yy: -20}
+// k: "yy"
+// v: -20
+console.log(
+  deepSearch(
+    [
+      { x: 1, y: [{ yy: 44 }] },
+      { x: 1, y: 5, z: { yy: 33 } },
+      { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }] },
+    ],
+    -20
+  )
+);
+
+console.log(
+  ascBy(
+    [
+      { x: 1, y: [{ yy: 44 }] },
+      { x: 1, y: 5, z: { yy: 33 } },
+      { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }] },
+    ],
+    'yy'
+  )
+);
+// [
+//   { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }],
+//   { x: 1, y: 5, z: { yy: 33 } },
+//   { x: 1, y: [{ yy: 44 }] },
+// ]
+
+console.log(
+  descBy(
+    [
+      { x: 1, y: [{ yy: 33 }] },
+      { x: 1, y: 5, z: { yy: 44 } },
+      { x: 1, y: 22, z: [{ xx: { zz: { yy: 999 } } }] },
+    ],
+    'yy'
+  )
+);
+
+// [
+//   { x: 1, y: 22, z: [{ xx: { zz: { yy: 999 } } }] },
+//   { x: 1, y: 5, z: { yy: 44 } },
+//   { x: 1, y: [{ yy: 33 }] },
+// ]
