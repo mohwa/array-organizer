@@ -179,7 +179,7 @@ console.log(
       acc[k] = v;
       return acc;
     },
-    {}
+    []
   )
 );
 
@@ -197,10 +197,12 @@ console.log(
 console.log(
   reduce(
     { x: 1, y: 2, z: 3, xx: 11, yy: 22, zz: 33 },
-    (acc, { v, k }) => {
+    (acc, v, k) => {
       acc[k] = v;
       return acc;
     },
     {}
   )
 );
+
+console.log([1, 2, 3, 4].reduce((acc, v) => acc + v)); // 10
