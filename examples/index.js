@@ -206,3 +206,14 @@ console.log(
 );
 
 console.log([1, 2, 3, 4].reduce((acc, v) => acc + v)); // 10
+
+console.log(
+  reduce(
+    undefined,
+    (acc, v, k) => {
+      acc[k] = v;
+      return acc;
+    },
+    {}
+  )
+);
