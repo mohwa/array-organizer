@@ -25,6 +25,7 @@ import {
   deepSearch,
   ascBy,
   descBy,
+  reduce,
 } from '../lib';
 
 const { isNumber } = type;
@@ -33,7 +34,7 @@ console.log(toArray('')); // []
 console.log(toArray('  ')); // ['', '']
 console.log(toArray('test')); // [t, e, s, t]
 console.log(toArray([1, 2, 3]));
-console.log(toArray({ x: 1, y: 2, z: 3 }));
+console.log(toArray({ x: 1, y: 2, z: 3 })); // [{ k: 'x', v: 1}, { k: 'y', v: 2}, { k: 'z', v: 3}]
 console.log(toArray({}));
 console.log(toArray([]));
 console.log(toArray(undefined));
@@ -170,3 +171,36 @@ console.log(
 //   { x: 1, y: 5, z: { yy: 44 } },
 //   { x: 1, y: [{ yy: 33 }] },
 // ]
+
+console.log(
+  reduce(
+    [1, 2, 3, 4],
+    (acc, v, k) => {
+      acc[k] = v;
+      return acc;
+    },
+    {}
+  )
+);
+
+console.log(
+  reduce(
+    [{ x: 1 }, { y: 2 }, { z: 3 }],
+    (acc, v, k) => {
+      acc[k] = v;
+      return acc;
+    },
+    {}
+  )
+);
+
+console.log(
+  reduce(
+    { x: 1, y: 2, z: 3, xx: 11, yy: 22, zz: 33 },
+    (acc, { v, k }) => {
+      acc[k] = v;
+      return acc;
+    },
+    {}
+  )
+);
