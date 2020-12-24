@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>array-organizer 1.0.1 | Documentation</title>
+  <title>array-organizer 1.0.2 | Documentation</title>
   <meta name='description' content='This library can use to handling data of an array type with required utility with polyfill'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.0.1</code></div>
+          <div class='mb1'><code>1.0.2</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -102,6 +102,16 @@
                   href='#searchindex'
                   class="">
                   searchIndex
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#deepsearch'
+                  class="">
+                  deepSearch
                   
                 </a>
                 
@@ -317,8 +327,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>toArray([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> { v, <span class="hljs-attr">vv</span>: <span class="hljs-keyword">this</span> }; }, { <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> });
-toArray({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> });</pre>
+      <pre class='p1 overflow-auto round fill-light'>toArray([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> { v, <span class="hljs-attr">vv</span>: <span class="hljs-keyword">this</span> }; }, { <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> });</pre>
     
   
 
@@ -611,8 +620,7 @@ this function would increase 1 an end index</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>fill([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">7</span>)
-fill({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">33</span> }, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>fill([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">7</span>)</pre>
     
   
 
@@ -699,8 +707,7 @@ fill({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <s
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))
-find({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">33</span> }, ({ v }) =&gt; isNumber(v))</pre>
+      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))</pre>
     
   
 
@@ -787,8 +794,7 @@ find({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <s
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))
-findIndex({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">33</span> }, ({ v }) =&gt; isNumber(v))</pre>
+      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))</pre>
     
   
 
@@ -963,6 +969,93 @@ findIndex({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span
     
       
       <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">'1'</span>)</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='deepsearch'>
+      deepSearch
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function return a first element found in an array object</p>
+
+    <div class='pre p1 fill-light mt0'>deepSearch(v: Array/Object, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Array/Object)</code>
+	    An array object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+	    Value which will be search
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
     
   
 
@@ -1223,8 +1316,7 @@ findIndex({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>)
-includes({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">yy</span>: { <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> } }, <span class="hljs-number">44</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>)</pre>
     
   
 
@@ -1302,7 +1394,7 @@ includes({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>,
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>asc({ <span class="hljs-attr">x</span>: <span class="hljs-string">'d'</span>, <span class="hljs-attr">y</span>: <span class="hljs-literal">null</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0xff</span> })</pre>
+      <pre class='p1 overflow-auto round fill-light'>asc([<span class="hljs-string">'d'</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">0xff</span>])</pre>
     
   
 
