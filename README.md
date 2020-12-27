@@ -94,6 +94,7 @@ import {
   shuffle,
   includes,
   deepFind,
+  deepSearch,
   ascBy,
   descBy,
   reduce
@@ -141,10 +142,19 @@ removeAll([1, 2, 3, 4], 1); // [1]
 lastIndex([1, 2, 3, 4]); // 3
 shuffle([1, 2, 3, 4]); // [3, 1, 2, 4]
 
-deepFind([{ x: { xx: { y: 3, z: 'A' } } }], v => typeof v === 'number'); // { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{…}] }
+deepFind([{ x: { xx: { y: 3, z: 'A' } } }], v => typeof v === 'number'); // { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{ ... }] }
+deepSearch(
+[
+  { x: 1, y: [{ yy: 44 }] },
+  { x: 1, y: 5, z: { yy: 33 } },
+  { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }] },
+],
+-20
+); // { c: { yy: -20 }, k: 'yy', v: -20, origin: [{ ... }] }
+
 
 ascBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]
 descBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]
 
-reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: {x: 1}, 1: {y: 2}, 2: {z: 3} }
+reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
  ```
