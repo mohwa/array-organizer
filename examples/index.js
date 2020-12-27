@@ -115,6 +115,8 @@ console.log(removeAll([1, 2, 3, 4], 1));
 console.log(lastIndex([1, 2, 3, 4])); // 3
 console.log(shuffle([1, 2, 3, 4])); // random
 
+console.log(deepFind([{ x: { xx: { y: 3, z: 'A' } } }], v => isNumber(v)));
+
 console.log(
   deepFind(
     [
@@ -204,8 +206,6 @@ console.log(
     {}
   )
 );
-
-console.log([1, 2, 3, 4].reduce((acc, v) => acc + v)); // 10
 
 console.log(
   reduce(

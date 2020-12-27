@@ -1,13 +1,14 @@
 {
   "name": "array-organizer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
     "array",
     "object",
-    "array data",
     "polyfill",
-    "array utils"
+    "utils",
+    "remove",
+    "search"
   ],
   "module": "dist/array-organizer.esm.js",
   "main": "dist/array-organizer.js",
