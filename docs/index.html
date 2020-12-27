@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>array-organizer 1.0.4 | Documentation</title>
+  <title>array-organizer 1.0.5 | Documentation</title>
   <meta name='description' content='This library can use to handling data of an array type with required utility with polyfill'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.0.4</code></div>
+          <div class='mb1'><code>1.0.5</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -82,6 +82,16 @@
                   href='#findindex'
                   class="">
                   findIndex
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#deepfind'
+                  class="">
+                  deepFind
                   
                 </a>
                 
@@ -169,6 +179,26 @@
               
                 
                 <li><a
+                  href='#ascby'
+                  class="">
+                  ascBy
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#descby'
+                  class="">
+                  descBy
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#preinsert'
                   class="">
                   preInsert
@@ -232,6 +262,16 @@
                   href='#shuffle'
                   class="">
                   shuffle
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#reduce'
+                  class="">
+                  reduce
                   
                 </a>
                 
@@ -795,6 +835,102 @@ this function would increase 1 an end index</p>
     
       
       <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='deepfind'>
+      deepFind
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function return a first element found in an array object</p>
+
+    <div class='pre p1 fill-light mt0'>deepFind(v: Array/Object, f: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, _this: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Array/Object)</code>
+	    An array object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    callback function
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_this</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    this object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">'A'</span> }}}], v =&gt; isNumber(v))</pre>
     
   
 
@@ -1493,6 +1629,180 @@ this function would increase 1 an end index</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='ascby'>
+      ascBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function return new an array object sorted ascending by object key</p>
+
+    <div class='pre p1 fill-light mt0'>ascBy(v: Array/Object, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Array/Object)</code>
+	    An array object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    object key
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>)</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='descby'>
+      descBy
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function return new an array object sorted descending by object key</p>
+
+    <div class='pre p1 fill-light mt0'>descBy(v: Array/Object, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Array/Object)</code>
+	    An array object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    object key
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>)</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='preinsert'>
       preInsert
     </h3>
@@ -1956,7 +2266,7 @@ this function would increase 1 an end index</p>
 
   <p>This function return a last index of an array object</p>
 
-    <div class='pre p1 fill-light mt0'>lastIndex(v: Array/Object)</div>
+    <div class='pre p1 fill-light mt0'>lastIndex(v: Array/Object): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1985,6 +2295,14 @@ this function would increase 1 an end index</p>
 
   
 
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
   
 
   
@@ -2026,7 +2344,7 @@ this function would increase 1 an end index</p>
 
   <p>This function return new an array object shuffled as the random</p>
 
-    <div class='pre p1 fill-light mt0'>shuffle(v: Array/Object)</div>
+    <div class='pre p1 fill-light mt0'>shuffle(v: Array/Object): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2056,6 +2374,14 @@ this function would increase 1 an end index</p>
   
 
   
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
 
   
 
@@ -2066,6 +2392,102 @@ this function would increase 1 an end index</p>
     
       
       <pre class='p1 overflow-auto round fill-light'>shuffle([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='reduce'>
+      reduce
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function return new object accumulated every value</p>
+
+    <div class='pre p1 fill-light mt0'>reduce(v: Array/Object, f: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Array/Object)</code>
+	    An array object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    callback function
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>initV</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    init object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        init object
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], (acc, v, k) =&gt; { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {});</pre>
     
   
 
