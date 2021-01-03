@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This library can use to handling data of an array type with required utility with polyfill",
   "keywords": [
     "array",
