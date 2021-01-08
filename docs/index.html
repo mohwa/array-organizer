@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>array-organizer 1.0.7 | Documentation</title>
+  <title>array-organizer 1.0.8 | Documentation</title>
   <meta name='description' content='This library can use to handling data of an array type with required utility with polyfill'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.0.7</code></div>
+          <div class='mb1'><code>1.0.8</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -300,7 +300,7 @@
   </div>
   
 
-  <p>This function convert an argument like iterable object to an array object</p>
+  <p>This function converts given iterable object to a array object</p>
 
     <div class='pre p1 fill-light mt0'>toArray</div>
   
@@ -328,8 +328,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>f</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-	    Function which will call on every element of iterable object
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
 
           </div>
           
@@ -338,7 +338,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
-	    Value which will be used as this context when executing function
+	    Value which will be used as this context when executing given function
 
           </div>
           
@@ -396,7 +396,7 @@
   </div>
   
 
-  <p>This function return new an array object through every arguments just like Array.of() method</p>
+  <p>This function returns an array object which included an every arguments</p>
 
     <div class='pre p1 fill-light mt0'>of(args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -416,7 +416,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same the arguments of Array.prototype.of() method
+	    Arguments
 
           </div>
           
@@ -445,8 +445,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
-<span class="hljs-keyword">of</span>({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span> })</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</pre>
     
   
 
@@ -475,7 +474,7 @@
   </div>
   
 
-  <p>This function return new an array object that copied every elements from start index until end index just like the Array.prototype.copyWithin() method</p>
+  <p>This function returns new array object which included every elements copied from start index until end index</p>
 
     <div class='pre p1 fill-light mt0'>copyWithin(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -504,7 +503,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Target index which to copy the sequence to
+	    Target index which to copied
 
           </div>
           
@@ -513,7 +512,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Start index which to start copying elements from
+	    Start index which to start copying
 
           </div>
           
@@ -523,7 +522,7 @@
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>v.length</code>)</code>
-	    End index which to end copying elements from(this function would increase 1 an end index)
+	    End index which to end copying(will be increase 1 an end index)
 
           </div>
           
@@ -582,8 +581,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
   </div>
   
 
-  <p>This function return new an array object that filled an argument from start index until end index just like the Array.prototype.fill() method
-this function would increase 1 an end index</p>
+  <p>This function returns new array object which filled a value from start index until end index</p>
 
     <div class='pre p1 fill-light mt0'>fill(v: Iterable, vv: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -621,7 +619,7 @@ this function would increase 1 an end index</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    Start index(default: 0)
+	    Start index
 
           </div>
           
@@ -631,7 +629,7 @@ this function would increase 1 an end index</p>
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>v.length</code>)</code>
-	    End index(default: arr.length)
+	    End index(will be increase 1 an end index)
 
           </div>
           
@@ -689,9 +687,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element found in an array object just like the Array.prototype.find() method</p>
+  <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>find(v: Iterable, args: any): any</div>
+    <div class='pre p1 fill-light mt0'>find(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
   
   
 
@@ -717,8 +715,17 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same an arguments of Array.prototype.find() method
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+	    Value which will be used as this context when executing given function
 
           </div>
           
@@ -776,9 +783,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element index found in an array object just like the Array.prototype.findIndex() method</p>
+  <p>This function returns an index of first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>findIndex(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+    <div class='pre p1 fill-light mt0'>findIndex(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -804,8 +811,17 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same an arguments of Array.prototype.findIndex() method
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+	    Value which will be used as this context when executing given function
 
           </div>
           
@@ -863,9 +879,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element found in an array object</p>
+  <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, f: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, _this: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
   
   
 
@@ -891,8 +907,8 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>f</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    callback function
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
 
           </div>
           
@@ -900,8 +916,8 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    this object
+            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+	    Value which will be used as this context when executing given function
 
           </div>
           
@@ -915,7 +931,7 @@ this function would increase 1 an end index</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+      <code>any</code>:
         
 
       
@@ -959,7 +975,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element found in an array object</p>
+  <p>This function returns a first element found from an iterable object</p>
 
     <div class='pre p1 fill-light mt0'>search(v: Iterable, t: any): any</div>
   
@@ -1046,7 +1062,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element index found in an array object</p>
+  <p>This function returns an index of first element found from an iterable object</p>
 
     <div class='pre p1 fill-light mt0'>searchIndex(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
@@ -1133,7 +1149,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a first element found in an array object</p>
+  <p>This function returns a first element found from an iterable object</p>
 
     <div class='pre p1 fill-light mt0'>deepSearch(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
@@ -1220,9 +1236,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object with all sub-array elements just like the Array.prototype.flat() method</p>
+  <p>This function returns new array object which included all sub-array elements</p>
 
-    <div class='pre p1 fill-light mt0'>flat(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>flat(v: Iterable, depth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1248,8 +1264,8 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same an arguments of Array.prototype.flat() method
+            <span class='code bold'>depth</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Depth level specifying how deep a nested array structure should be flattened
 
           </div>
           
@@ -1307,9 +1323,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object formed by applying a given callback function to each element of the array just like the Array.prototype.flatMap() method</p>
+  <p>This function returns new array object formed by applying a given callback function to each element of iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>flatMap(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>flatMap(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1335,8 +1351,17 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same an arguments of Array.prototype.flatMap() method
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+	    Value which will be used as this context when executing given function
 
           </div>
           
@@ -1394,9 +1419,9 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return true or false as whether in an array includes certain value and is not</p>
+  <p>This function returns whether in an array includes certain value and is not</p>
 
-    <div class='pre p1 fill-light mt0'>includes(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1422,8 +1447,17 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments which same an arguments of Array.prototype.includes() method
+            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+	    Target Value which will be search
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Start index which to searching
 
           </div>
           
@@ -1481,7 +1515,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object sorted to ascending</p>
+  <p>This function returns new array object sorted to ascending</p>
 
     <div class='pre p1 fill-light mt0'>asc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1559,7 +1593,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object sorted to descending</p>
+  <p>This function returns new array object sorted to descending</p>
 
     <div class='pre p1 fill-light mt0'>desc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1637,7 +1671,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object sorted ascending by object key</p>
+  <p>This function returns new array object sorted ascending by object key</p>
 
     <div class='pre p1 fill-light mt0'>ascBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1666,8 +1700,7 @@ this function would increase 1 an end index</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    object key
-
+	    
           </div>
           
         </div>
@@ -1724,7 +1757,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object sorted descending by object key</p>
+  <p>This function returns new array object sorted descending by object key</p>
 
     <div class='pre p1 fill-light mt0'>descBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1753,8 +1786,7 @@ this function would increase 1 an end index</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>key</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    object key
-
+	    
           </div>
           
         </div>
@@ -1811,7 +1843,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function insert values from the first index of an array object</p>
+  <p>This function inserts a value from the first index of an array object</p>
 
     <div class='pre p1 fill-light mt0'>preInsert(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1898,7 +1930,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function insert values from a target index of an array</p>
+  <p>This function inserts a value from a target index of an array</p>
 
     <div class='pre p1 fill-light mt0'>insert(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -1994,7 +2026,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function replace from target index value of an array to new values</p>
+  <p>This function replaces from target index value of an array to new values</p>
 
     <div class='pre p1 fill-light mt0'>replace(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -2090,7 +2122,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function remove a value at a target index of an array object</p>
+  <p>This function removes a value at a target index of an array object</p>
 
     <div class='pre p1 fill-light mt0'>remove(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -2177,7 +2209,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function remove values from a target index of an array object</p>
+  <p>This function removes a value from a target index of an array object</p>
 
     <div class='pre p1 fill-light mt0'>removeAll(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -2264,7 +2296,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return a last index of an array object</p>
+  <p>This function returns last index of an array object</p>
 
     <div class='pre p1 fill-light mt0'>lastIndex(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
@@ -2342,7 +2374,7 @@ this function would increase 1 an end index</p>
   </div>
   
 
-  <p>This function return new an array object shuffled as the random</p>
+  <p>This function returns new array object shuffled as the random</p>
 
     <div class='pre p1 fill-light mt0'>shuffle(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
@@ -2422,7 +2454,7 @@ this function would increase 1 an end index</p>
 
   <p>This function return new object accumulated every value</p>
 
-    <div class='pre p1 fill-light mt0'>reduce(v: Iterable, f: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -2448,8 +2480,8 @@ this function would increase 1 an end index</p>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>f</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    callback function
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
 
           </div>
           
@@ -2473,7 +2505,7 @@ this function would increase 1 an end index</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        init object
+        
 
       
     
