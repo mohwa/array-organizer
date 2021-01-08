@@ -72,6 +72,8 @@ toArray(s); // [1, 2, 3]
 ```
 
 ## Main API 
+
+You will be able to used for add or remove or search every element of iterable object 
  
 ```javascript
 import {
@@ -90,9 +92,16 @@ import {
   deepSearch,
   ascBy,
   descBy,
-  reduce
+  reduce,
+  includes
 } from 'array-organizer';
  
+reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
+
+// Will be found a 2 from an array object 
+includes([1, 2, 3], 2); // true
+includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
+
 // Will be filled 7 from index 2 until end index of an array object
 fill([1, 2, 3, 4], 7, 2); // [1, 2, 7, 7]
 fill([1, 2, 3, 4], 7); // [7, 7, 7, 7]
@@ -139,8 +148,6 @@ deepSearch(
 // Will be ascending based y property
 ascBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]
 descBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]
-
-reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
 ``` 
  
 ## Other API
@@ -153,8 +160,7 @@ import {
   flat,
   flatMap,
   lastIndex,
-  shuffle,
-  includes,
+  shuffle
 } from 'array-organizer';
  
 of(1, 2, 3, 4); // [1, 2, 3, 4]
@@ -171,10 +177,6 @@ flat({ x: 1, y: 2, yy: { zz: 3 } }); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k
 
 flatMap(['1', [2, 3, 4], [5, 6, 7, [8, 9]]], v => v.slice(0)); // ['1', 2, 3, 4, 5, 6, 7, [8, 9]]
 flatMap(['1', [2, 3, 4]], v => [...v, 444]); // ['1', 444, 2, 3, 4, 444]
-
-// Will be found a 2 from an array object 
-includes([1, 2, 3], 2); // true
-includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
 
 // Same to [1, 2, 3, 4].length - 1
 lastIndex([1, 2, 3, 4]); // 3
