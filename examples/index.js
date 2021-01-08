@@ -93,13 +93,17 @@ console.log(searchIndex(['1', 2, 3], '1')); // 0
 // //
 console.log(flat(['1', [2, 3, 4], [5, 6, 2, [8, 9]]], 2)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(flat({ x: 1, y: 2, yy: { zz: 3 } })); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 console.log(flatMap(['1', [2, 3, 4], [5, 6, 7, [8, 9]]], v => v.slice(0))); // [1, 2, 3, 4, 5, 6, 7, [8, 9]]
+console.log(flatMap(['1', [2, 3, 4]], v => [...v, 444])); // ["1", 444, 2, 3, 4, 444]
 
 console.log(includes([1, 2, 3], 2));
 console.log(includes({ x: 1, y: 2, yy: { zz: 3 } }, 44));
 
 console.log(asc(['d', null, 0xff, true, { x: 1 }, 'ee', new Map(), 't', 0]));
 console.log(asc({ x: 'd', y: null, z: 0xff }));
+
+console.log(desc([5, 3, 4, 6, 1, 2])); // [5, 3, 4, 6, 1, 2]
 console.log(desc(['d', true, undefined, 0xff, 'ee', [], 2e4, () => {}, 't', 0]));
 
 console.log(preInsert([1, 2, 3, 4], 11));
