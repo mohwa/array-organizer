@@ -182,3 +182,13 @@ flatMap(['1', [2, 3, 4]], v => [...v, 444]); // ['1', 444, 2, 3, 4, 444]
 lastIndex([1, 2, 3, 4]); // 3
 shuffle([1, 2, 3, 4]); // [3, 1, 2, 4]
  ```
+
+# Features to be discontinued
+
+We decided to deprecate some functions because we thought unnecessary them.
+
+|name|description|version that deprecated|
+|:---:|:---:|:---:|
+|search | Will be able to using instead  `find` or `includes`|2.0.0
+|searchIndex | Will be able to using instead `findIndex`|2.0.0
+|deepSearch | Will be able to using instead `deepFind`|2.0.0
