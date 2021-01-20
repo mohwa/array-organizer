@@ -77,6 +77,7 @@ You will be able to used for add or remove or search every element of iterable o
  
 ```javascript
 import {
+  forEach,
   fill,
   find,
   search,
@@ -95,7 +96,14 @@ import {
   reduce,
   includes
 } from 'array-organizer';
- 
+
+forEach('  ', (v, k) => console.log(v)); // '', ''
+forEach('test', (v, k) => console.log(v)); // 't', 'e', 's', 't'
+forEach([1, 2, 3], (v, k) => console.log(v)); // 1, 2, 3
+forEach({ x: 1, y: 2, z: 3 }, (v) => console.log(v)); // 1, 2, 3
+forEach(new Map([['x', 1], ['y', 2], ['z', 3]]), (v) => console.log(v)); // 1, 2, 3
+forEach(new Set([1, 2, 3]), (v) => console.log(v)); // 1, 2, 3
+
 reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
 
 // Will be found a 2 from an array object 

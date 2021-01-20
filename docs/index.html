@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>array-organizer 1.0.11 | Documentation</title>
+  <title>array-organizer 1.0.13 | Documentation</title>
   <meta name='description' content='This library will be used to handling data of an array type'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.0.11</code></div>
+          <div class='mb1'><code>1.0.13</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -26,6 +26,16 @@
             type='text' />
           <div id='toc'>
             <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#foreach'
+                  class="">
+                  forEach
+                  
+                </a>
+                
+                </li>
               
                 
                 <li><a
@@ -42,6 +52,56 @@
                   href='#of'
                   class="">
                   of
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#concat'
+                  class="">
+                  concat
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#indexof'
+                  class="">
+                  indexOf
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#lastindexof'
+                  class="">
+                  lastIndexOf
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#keys'
+                  class="">
+                  keys
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#values'
+                  class="">
+                  values
                   
                 </a>
                 
@@ -292,6 +352,94 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='foreach'>
+      forEach
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function will be call every element of iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>forEach</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    Function which will be call on every element of iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+	    Value which will be used as this context when executing given function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>forEach([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v, k</span>) </span>{}, <span class="hljs-built_in">this</span>);</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='toarray'>
       toArray
     </h3>
@@ -300,7 +448,7 @@
   </div>
   
 
-  <p>This function converts given iterable object to an array object</p>
+  <p>This function converts given iterable object to new an array object</p>
 
     <div class='pre p1 fill-light mt0'>toArray</div>
   
@@ -367,7 +515,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>toArray([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> { v, <span class="hljs-attr">vv</span>: <span class="hljs-keyword">this</span> }; }, { <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> });</pre>
+      <pre class='p1 overflow-auto round fill-light'>toArray([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v, k</span>) </span>{ <span class="hljs-keyword">return</span> { v, <span class="hljs-attr">vv</span>: <span class="hljs-built_in">this</span> }; }, <span class="hljs-built_in">this</span>);</pre>
     
   
 
@@ -466,6 +614,443 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='concat'>
+      concat
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns new array object which merged as an argument values</p>
+
+    <div class='pre p1 fill-light mt0'>concat(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
+	    Argument values
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>concat({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xxx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yyy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zzz</span>: <span class="hljs-number">3</span> })</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='indexof'>
+      indexOf
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns index of found value from given iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
+	    Search value
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>from</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>0</code>)</code>
+	    Start index which will be search
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>indexOf([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='lastindexof'>
+      lastIndexOf
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns index of found value from given iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
+	    Search value
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>from</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>Array.length-1</code>)</code>
+	    Start index which will be search from last index
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>lastIndexOf([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='keys'>
+      keys
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns index of found value from given iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>keys(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>keys([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='values'>
+      values
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns index of found value from given iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>values(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>values([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='copywithin'>
       copyWithin
     </h3>
@@ -521,7 +1106,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>v.length</code>)</code>
+            = <code>Array.length</code>)</code>
 	    End index which to end copying(will be increase 1 an end index)
 
           </div>
@@ -551,8 +1136,8 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>copyWithin([<span class="hljs-number">1</span>, <span class="hljs-string">'2'</span>, <span class="hljs-number">3</span>], <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
-copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>copyWithin([<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-number">3</span>], <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</pre>
     
   
 
@@ -628,7 +1213,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>v.length</code>)</code>
+            = <code>Array.length</code>)</code>
 	    End index(will be increase 1 an end index)
 
           </div>
@@ -754,7 +1339,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))</pre>
+      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
     
   
 
@@ -850,7 +1435,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; isNumber(v))</pre>
+      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
     
   
 
@@ -946,7 +1531,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">'A'</span> }}}], v =&gt; isNumber(v))</pre>
+      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">&#x27;A&#x27;</span> }}}], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
     
   
 
@@ -1033,7 +1618,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
     
   
 
@@ -1120,7 +1705,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">'1'</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">&#x27;1&#x27;</span>)</pre>
     
   
 
@@ -1207,7 +1792,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
     
   
 
@@ -1294,7 +1879,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">'1'</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>)</pre>
     
   
 
@@ -1390,7 +1975,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">'1'</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], v =&gt; v.slice(<span class="hljs-number">0</span>))</pre>
+      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v.slice(<span class="hljs-number">0</span>), <span class="hljs-built_in">this</span>)</pre>
     
   
 
@@ -1564,7 +2149,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>asc([<span class="hljs-string">'d'</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">0xff</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>asc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">0xff</span>])</pre>
     
   
 
@@ -1642,7 +2227,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">'d'</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">'ee'</span>, [], <span class="hljs-number">2e4</span>, () =&gt; {}, <span class="hljs-string">'t'</span>, <span class="hljs-number">0</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">&#x27;ee&#x27;</span>, [], <span class="hljs-number">2e4</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-number">0</span>])</pre>
     
   
 
@@ -1728,7 +2313,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>)</pre>
     
   
 
@@ -1814,7 +2399,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>)</pre>
     
   
 
@@ -2093,7 +2678,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">'ADD'</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">&#x27;ADD&#x27;</span>)</pre>
     
   
 
@@ -2519,7 +3104,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], (acc, v, k) =&gt; { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {});</pre>
+      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], <span class="hljs-function">(<span class="hljs-params">acc, v, k</span>) =&gt;</span> { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {});</pre>
     
   
 

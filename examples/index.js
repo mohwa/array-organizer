@@ -26,9 +26,148 @@ import {
   ascBy,
   descBy,
   reduce,
+  forEach,
+  concat,
+  indexOf,
+  lastIndexOf,
+  keys,
+  values,
 } from '../lib';
 
 const { isNumber } = type;
+
+forEach('', (v, k) => {
+  console.log(v, k);
+});
+
+forEach('  ', (v, k) => {
+  console.log(v, k);
+});
+
+forEach('test', (v, k) => {
+  console.log(v, k);
+});
+
+forEach([1, 2, 3], (v, k) => {
+  console.log(v, k);
+});
+
+forEach({ x: 1, y: 2, z: 3 }, (v, k) => {
+  console.log(v, k);
+});
+
+// This data can not loop
+forEach({}, (v, k) => {
+  console.log(v, k);
+});
+
+// This data can not loop
+forEach([], (v, k) => {
+  console.log(v, k);
+});
+
+// This data can not loop
+forEach(undefined, (v, k) => {
+  console.log(v, k);
+});
+
+// This data can not loop
+forEach(null, (v, k) => {
+  console.log(v, k);
+});
+
+// This data can not loop
+forEach(true, (v, k) => {
+  console.log(v, k);
+});
+
+console.log(concat({ x: 1, y: 2, z: 3 }, { xx: 1, yy: 2, zz: 3 }, function() {}, true, false, {}, []));
+
+// try {
+//   console.log(
+//     concat(
+//       { x: 1, y: 2, z: 3 },
+//       { xx: 1, yy: 2, zz: 3 },
+//       function() {},
+//       true,
+//       false,
+//       {},
+//       [],
+//       new Map([['x', 1]]),
+//       new Set([11, 22, 33]),
+//       'test',
+//       (function*() {
+//         yield 88;
+//       })()
+//     )
+//   );
+// } catch (e) {
+//   console.log(e.message);
+// }
+
+console.log(concat({ x: 1, y: 2, z: 3 }, { xx: 1, yy: 2, zz: 3 }, { xxx: 1, yyy: 2, zzz: 3 }));
+
+console.log(toArray({ x: 1, y: 2, z: 3 }).every(({ v, k }, i) => typeof v === 'number')); // true
+console.log(toArray({ x: 1, y: 2, z: 3 }).every(({ v, k }, i) => v < 3)); // false
+
+console.log(
+  toArray({ x: 'spray', y: 'limit', z: 'elite', xx: 'exuberant', yy: 'destruction', zz: 'present' }).filter(
+    ({ v, k }) => v.length > 6
+  )
+); // [{ k: "xx", v: "exuberant" }, { k: "yy", v: "destruction" }, { k: "zz", v: "present" }]
+
+const filteredArr = toArray({ x: 'elite', y: 'destruction', z: 'spray' }).filter(({ v, k }) => v.length > 6);
+console.log(filteredArr); // [{ k: "y", v: "destruction" }]
+console.log(filteredArr[0].k, filteredArr[0].v); // "y", "destruction"
+
+try {
+  console.log(
+    toArray(
+      new Map([
+        ['x', 'elite'],
+        ['y', 'destruction'],
+        ['z', 'spray'],
+      ])
+    ).filter(({ v, k }) => v.length > 6)
+  ); // [{ k: "y", v: "destruction" }]
+} catch (e) {
+  console.log(e.message);
+}
+
+console.log(toArray([1, 2, 3]).join('-')); // [{ k: "y", v: "destruction" }]
+
+// eslint-disable-next-line no-sparse-arrays
+console.log(keys([1, , 3])); // [0, 1, 2]
+console.log(keys({ x: 1, y: 2, z: 3 })); // ['x', 'y', 'z']
+
+console.log(values([1, , 3])); // [1, undefined, 3]
+console.log(values({ x: 1, y: 2, z: 3 })); // [1, 2, 3]
+
+const popArr = toArray({ x: 1, y: 2, z: 3 });
+popArr.pop();
+console.log(popArr); // [{ k: "x", v: 1 }, { k: "y", v: 2 }]
+
+console.log(toArray({ x: 1, y: 2, z: 3 }).reverse()); // [{ k: "z", v: 3 }, { k: "y", v: 2 }, { k: "x", v: 1 }]
+
+try {
+  forEach(
+    new Map([
+      ['x', 1],
+      ['y', 2],
+      ['z', 3],
+    ]),
+    v => console.log(v)
+  );
+  forEach(new Set([1, 2, 3]), v => console.log(v)); // 1, 2, 3
+} catch (e) {
+  console.log(e.message);
+}
+
+console.log(indexOf([1, 2, 3], 2)); // 1
+console.log(indexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44)); // -1
+
+console.log(lastIndexOf([1, 2, 3], 2)); // 1
+console.log(lastIndexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44)); // -1
 
 console.log(toArray('')); // []
 console.log(toArray('  ')); // ['', '']
@@ -49,6 +188,8 @@ console.log(
     { x: 1 }
   )
 );
+
+console.log(toArray({ x: 1, y: 2, z: 3 }).concat({ xx: 1, yy: 2, zz: 3 }));
 
 function iteratorArgument() {
   console.log(toArray(arguments)); // [1, 2, 5555]
@@ -100,7 +241,12 @@ console.log(flatMap(['1', [2, 3, 4]], v => [...v, 444])); // ["1", 444, 2, 3, 4,
 console.log(includes([1, 2, 3], 2));
 console.log(includes({ x: 1, y: 2, yy: { zz: 3 } }, 44));
 
-console.log(asc(['d', null, 0xff, true, { x: 1 }, 'ee', new Map(), 't', 0]));
+try {
+  console.log(asc(['d', null, 0xff, true, { x: 1 }, 'ee', new Map(), 't', 0]));
+} catch (e) {
+  console.log(e.message);
+}
+
 console.log(asc({ x: 'd', y: null, z: 0xff }));
 
 console.log(desc([5, 3, 4, 6, 1, 2])); // [5, 3, 4, 6, 1, 2]
