@@ -20,7 +20,7 @@
     "deploy": "npm run lint && npm run build && npm run doc && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "coverage": "jest --config jest.config.js --ci --coverage",
-    "lint": "eslint 'examples/**/*' 'lib/**/*' --fix",
+    "lint": "eslint 'lib/**/*' --fix",
     "clean": "rimraf dist",
     "doc": "babel-node scripts/doc.js"
   },
