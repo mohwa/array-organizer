@@ -43,8 +43,6 @@ toArray({ x: 'spray', y: 'limit', z: 'elite', xx: 'exuberant', yy: 'destruction'
 ({ v, k }) => v.length > 6
 ) // [{ k: "xx", v: "exuberant" }, { k: "yy", v: "destruction" }, { k: "zz", v: "present" }]
 
-toArray([1, 2, 3]).join('-') // 1-2-3
-
 const popArr = toArray({ x: 1, y: 2, z: 3 });
 popArr.pop();
  
@@ -152,7 +150,8 @@ import {
   indexOf,
   lastIndexOf,
   keys,
-  values
+  values,
+  join
 } from 'array-organizer';
 
 // Will be filled 7 from index 2 until end index of an array object
@@ -238,6 +237,8 @@ keys({ x: 1, y: 2, z: 3 }); // ['x', 'y', 'z']
 
 values([1, , 3]); // [1, undefined, 3]
 values({ x: 1, y: 2, z: 3 }); // [1, 2, 3]
+
+join({ x: 1, y: 2, z: 3 }, '-') // '1-2-3'
 ``` 
  
 ## Other API

@@ -32,6 +32,7 @@ import {
   lastIndexOf,
   keys,
   values,
+  join,
 } from '../lib';
 
 const { isNumber } = type;
@@ -116,7 +117,7 @@ console.log(
     ({ v, k }) => v.length > 6
   )
 ); // [{ k: "xx", v: "exuberant" }, { k: "yy", v: "destruction" }, { k: "zz", v: "present" }]
-console.log(toArray([1, 2, 3]).join('-')); // 1-2-3
+console.log(join({ x: 1, y: 2, z: 3 }, '-')); // 1-2-3
 
 // eslint-disable-next-line no-sparse-arrays
 console.log(keys([1, , 3])); // [0, 1, 2]
