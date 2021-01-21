@@ -1,7 +1,7 @@
 import { uglify } from 'rollup-plugin-uglify';
 import { terser } from 'rollup-plugin-terser';
 import pkg from '../package.json';
-import { OUTPUT_PATH, mergeEntryConfig } from './utils';
+import { OUTPUT_PATH, mergeEntryConfig, OUTPUT_NAME } from './utils';
 
 export default [
   mergeEntryConfig({
@@ -17,7 +17,7 @@ export default [
       file: pkg.main,
       format: 'umd',
       exports: 'named',
-      name: pkg.name,
+      name: OUTPUT_NAME,
       sourcemap: false,
     },
   }),
@@ -26,7 +26,7 @@ export default [
       file: `${OUTPUT_PATH}/${pkg.name}.min.js`,
       format: 'umd',
       exports: 'named',
-      name: pkg.name,
+      name: OUTPUT_NAME,
       plugins: [uglify()],
     },
   }),

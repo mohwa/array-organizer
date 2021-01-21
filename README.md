@@ -32,7 +32,7 @@ IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` versio
 
 ## Variety ways which use together a native apis
 
-Any apis can be used more powerfully together a native apis like following examples
+Any apis can be used more powerfully together a [native apis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) like following examples
 
 ```javascript
 import { toArray } from 'array-organizer';
