@@ -721,7 +721,7 @@
 
   <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -772,7 +772,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         
 
       
@@ -818,7 +818,7 @@
 
   <p>This function returns joined value as a separator from every elements of an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -859,7 +859,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         
 
       
@@ -874,7 +874,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>join({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-string">&#x27;-&#x27;</span>) <span class="hljs-comment">// 1-2-3</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>join({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-string">&#x27;-&#x27;</span>) <span class="hljs-comment">// &#x27;1-2-3&#x27;</span></pre>
     
   
 
@@ -905,7 +905,7 @@
 
   <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -956,7 +956,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         
 
       
@@ -1233,7 +1233,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// // [{ k: &#x27;y&#x27;, v: &#x27;2&#x27; }, { k: &#x27;z&#x27;, v: 3 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [{ k: &#x27;y&#x27;, v: &#x27;2&#x27; }, { k: &#x27;z&#x27;, v: 3 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
     
   
 
@@ -1562,7 +1562,7 @@
 
   <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
+    <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -1612,7 +1612,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
         
 
       
@@ -2102,7 +2102,7 @@
 
   <p>This function returns whether in an array includes certain value and is not</p>
 
-    <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -2152,7 +2152,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         
 
       
@@ -3135,7 +3135,7 @@
 
   <p>This function return new object accumulated every value</p>
 
-    <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
   
   
 
@@ -3185,7 +3185,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+      <code>any</code>:
         
 
       
