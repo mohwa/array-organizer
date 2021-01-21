@@ -1,362 +1,369 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset='utf-8'>
+  <meta charset='utf-811' />
   <title>array-organizer 1.2.0 | Documentation</title>
-  <meta name='description' content='This library will be used to handling data of an array type'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' rel='stylesheet'>
-  <link href='assets/style.css' rel='stylesheet'>
-  <link href='assets/github.css' rel='stylesheet'>
-  <link href='assets/split.css' rel='stylesheet'>
+  <link href='assets/bass.css' rel='stylesheet' />
+  <link href='assets/style.css' rel='stylesheet' />
+  <link href='assets/github.css' rel='stylesheet' />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i' />
 </head>
 <body class='documentation m0'>
-    <div class='flex'>
-      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
-        <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.2.0</code></div>
-          <input
-            placeholder='Filter'
-            id='filter-input'
-            class='col12 block input'
-            spellcheck='false'
-            autocapitalize='off'
-            autocorrect='off'
-            type='text' />
-          <div id='toc'>
-            <ul class='list-reset h5 py1-ul'>
-              
-                
-                <li><a
-                  href='#foreach'
-                  class="">
-                  forEach
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#toarray'
-                  class="">
-                  toArray
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#of'
-                  class="">
-                  of
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#concat'
-                  class="">
-                  concat
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#indexof'
-                  class="">
-                  indexOf
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#join'
-                  class="">
-                  join
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#lastindexof'
-                  class="">
-                  lastIndexOf
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#keys'
-                  class="">
-                  keys
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#values'
-                  class="">
-                  values
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#copywithin'
-                  class="">
-                  copyWithin
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#fill'
-                  class="">
-                  fill
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#find'
-                  class="">
-                  find
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#findindex'
-                  class="">
-                  findIndex
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#deepfind'
-                  class="">
-                  deepFind
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#search'
-                  class="">
-                  search
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#searchindex'
-                  class="">
-                  searchIndex
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#deepsearch'
-                  class="">
-                  deepSearch
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#flat'
-                  class="">
-                  flat
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#flatmap'
-                  class="">
-                  flatMap
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#includes'
-                  class="">
-                  includes
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#asc'
-                  class="">
-                  asc
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#desc'
-                  class="">
-                  desc
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#ascby'
-                  class="">
-                  ascBy
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#descby'
-                  class="">
-                  descBy
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#preinsert'
-                  class="">
-                  preInsert
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#insert'
-                  class="">
-                  insert
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#replace'
-                  class="">
-                  replace
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#remove'
-                  class="">
-                  remove
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#removeall'
-                  class="">
-                  removeAll
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#lastindex'
-                  class="">
-                  lastIndex
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#shuffle'
-                  class="">
-                  shuffle
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#reduce'
-                  class="">
-                  reduce
-                  
-                </a>
-                
-                </li>
-              
-            </ul>
-          </div>
-          <div class='mt1 h6 quiet'>
-            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
-          </div>
+  <div class='page flex'>
+    <header class='page__header'>
+      <div class='inner'>
+        <div class='page__headline'>
+          <h1 class='mb0 no-anchor page__title'>array-organizer</h1>
+          <p class='mb1 page__subtitle'><code>1.2.0</code></p>
+          <div style="margin-top: 20px"><a class='mb1 page__subtitle' href="https://github.com/mohwa/array-organizer#readme">https://github.com/mohwa/array-organizer#readme</a></div>
         </div>
+
+        <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
+
+        <nav class='page__prime-nav' id='prime-nav'>
+          <input placeholder='Filter' id='filter-input' class='col12 block input' type='text' />
+
+          <h2 class='mb1 page__subtitle'>Contents</h2>
+
+          <div class='page__nav-contents'>
+            <div id='toc'>
+              <ul class='ppn__menu'>
+                
+                  
+                  <li><a
+                    href='#foreach'
+                    class=' ppn__menu-item'>
+                    forEach
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#toarray'
+                    class=' ppn__menu-item'>
+                    toArray
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#of'
+                    class=' ppn__menu-item'>
+                    of
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#concat'
+                    class=' ppn__menu-item'>
+                    concat
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#indexof'
+                    class=' ppn__menu-item'>
+                    indexOf
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#join'
+                    class=' ppn__menu-item'>
+                    join
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#lastindexof'
+                    class=' ppn__menu-item'>
+                    lastIndexOf
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#keys'
+                    class=' ppn__menu-item'>
+                    keys
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#values'
+                    class=' ppn__menu-item'>
+                    values
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#copywithin'
+                    class=' ppn__menu-item'>
+                    copyWithin
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#fill'
+                    class=' ppn__menu-item'>
+                    fill
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#find'
+                    class=' ppn__menu-item'>
+                    find
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#findindex'
+                    class=' ppn__menu-item'>
+                    findIndex
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#deepfind'
+                    class=' ppn__menu-item'>
+                    deepFind
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#search'
+                    class=' ppn__menu-item'>
+                    search
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#searchindex'
+                    class=' ppn__menu-item'>
+                    searchIndex
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#deepsearch'
+                    class=' ppn__menu-item'>
+                    deepSearch
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#flat'
+                    class=' ppn__menu-item'>
+                    flat
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#flatmap'
+                    class=' ppn__menu-item'>
+                    flatMap
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#includes'
+                    class=' ppn__menu-item'>
+                    includes
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#asc'
+                    class=' ppn__menu-item'>
+                    asc
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#desc'
+                    class=' ppn__menu-item'>
+                    desc
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#ascby'
+                    class=' ppn__menu-item'>
+                    ascBy
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#descby'
+                    class=' ppn__menu-item'>
+                    descBy
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#preinsert'
+                    class=' ppn__menu-item'>
+                    preInsert
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#insert'
+                    class=' ppn__menu-item'>
+                    insert
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#replace'
+                    class=' ppn__menu-item'>
+                    replace
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#remove'
+                    class=' ppn__menu-item'>
+                    remove
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#removeall'
+                    class=' ppn__menu-item'>
+                    removeAll
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#lastindex'
+                    class=' ppn__menu-item'>
+                    lastIndex
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#shuffle'
+                    class=' ppn__menu-item'>
+                    shuffle
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#reduce'
+                    class=' ppn__menu-item'>
+                    reduce
+                    
+                  </a>
+                  
+                  </li>
+                
+              </ul>
+
+              <div class='mt1 h6 quiet'>
+                <a class='page__subtitle' href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
-      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+    </header>
+
+    <main class='page__body'>
+      
         
-          
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -370,9 +377,12 @@
   </div>
   
 
-  <p>This function will be call every element of iterable object</p>
+  <div class="markdown-body">
+    <p>This function will be call every element of iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>forEach</div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>forEach</div>
   
   
 
@@ -424,15 +434,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>forEach(<span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">v, k</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(v)); <span class="hljs-comment">// &#x27;t&#x27;, &#x27;e&#x27;, &#x27;s&#x27;, &#x27;t&#x27;</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>forEach(<span class="hljs-string">'test'</span>, (v, k) =&gt; <span class="hljs-built_in">console</span>.log(v)); <span class="hljs-comment">// 't', 'e', 's', 't'</span></pre>
     
-  
-
   
 
   
@@ -442,9 +448,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -458,9 +464,12 @@
   </div>
   
 
-  <p>This function converts given iterable object to new an array object</p>
+  <div class="markdown-body">
+    <p>This function converts given iterable object to new an array object</p>
 
-    <div class='pre p1 fill-light mt0'>toArray</div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>toArray</div>
   
   
 
@@ -520,15 +529,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>toArray({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }); <span class="hljs-comment">// [{ k: &#x27;x&#x27;, v: 1 }, { k: &#x27;y&#x27;, v: 2 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>toArray({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }); <span class="hljs-comment">// [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 }]</span></pre>
     
-  
-
   
 
   
@@ -538,9 +543,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -554,9 +559,12 @@
   </div>
   
 
-  <p>This function returns an array object which included an every arguments</p>
+  <div class="markdown-body">
+    <p>This function returns an array object which included an every arguments</p>
 
-    <div class='pre p1 fill-light mt0'>of(args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>of(args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -598,8 +606,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -612,13 +618,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -632,9 +636,12 @@
   </div>
   
 
-  <p>This function returns new array object which merged as an argument values</p>
+  <div class="markdown-body">
+    <p>This function returns new array object which merged as an argument values</p>
 
-    <div class='pre p1 fill-light mt0'>concat(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>concat(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -685,15 +692,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>concat({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xxx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yyy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zzz</span>: <span class="hljs-number">3</span> }) <span class="hljs-comment">// [{ k: &#x27;x&#x27;, 1 } ... { k: &#x27;xxx&#x27;, v: 1 }])</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>concat({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xxx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yyy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zzz</span>: <span class="hljs-number">3</span> }) <span class="hljs-comment">// [{ k: 'x', 1 } ... { k: 'xxx', v: 1 }])</span></pre>
     
-  
-
   
 
   
@@ -703,9 +706,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -719,9 +722,12 @@
   </div>
   
 
-  <p>This function returns index of found value from given iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -772,13 +778,11 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         
 
       
     
-  
-
   
 
   
@@ -796,13 +800,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -816,9 +818,12 @@
   </div>
   
 
-  <p>This function returns joined value as a separator from every elements of an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns joined value as a separator from every elements of an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -859,7 +864,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
         
 
       
@@ -869,15 +874,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>join({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-string">&#x27;-&#x27;</span>) <span class="hljs-comment">// 1-2-3</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>join({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-string">'-'</span>) <span class="hljs-comment">// '1-2-3'</span></pre>
     
-  
-
   
 
   
@@ -887,9 +888,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -903,9 +904,12 @@
   </div>
   
 
-  <p>This function returns index of found value from given iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -956,13 +960,11 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         
 
       
     
-  
-
   
 
   
@@ -980,13 +982,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1000,9 +1000,12 @@
   </div>
   
 
-  <p>This function returns index of found value from given iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>keys(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>keys(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1039,8 +1042,6 @@
 
       
     
-  
-
   
 
   
@@ -1058,13 +1059,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1078,9 +1077,12 @@
   </div>
   
 
-  <p>This function returns index of found value from given iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns index of found value from given iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>values(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>values(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1122,8 +1124,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -1136,13 +1136,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1156,9 +1154,12 @@
   </div>
   
 
-  <p>This function returns new array object which included every elements copied from start index until end index</p>
+  <div class="markdown-body">
+    <p>This function returns new array object which included every elements copied from start index until end index</p>
 
-    <div class='pre p1 fill-light mt0'>copyWithin(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>copyWithin(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1228,15 +1229,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// // [{ k: &#x27;y&#x27;, v: &#x27;2&#x27; }, { k: &#x27;z&#x27;, v: 3 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [{ k: 'y', v: '2' }, { k: 'z', v: 3 }, { k: 'z', v: 3 }]</span></pre>
     
-  
-
   
 
   
@@ -1246,9 +1243,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1262,9 +1259,12 @@
   </div>
   
 
-  <p>This function returns new array object which filled a value from start index until end index</p>
+  <div class="markdown-body">
+    <p>This function returns new array object which filled a value from start index until end index</p>
 
-    <div class='pre p1 fill-light mt0'>fill(v: Iterable, vv: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>fill(v: Iterable, vv: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1334,8 +1334,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -1348,13 +1346,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1368,9 +1364,12 @@
   </div>
   
 
-  <p>This function returns a first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>find(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>find(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
   
   
 
@@ -1430,15 +1429,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// 2</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// 2</span></pre>
     
-  
-
   
 
   
@@ -1448,9 +1443,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1464,9 +1459,12 @@
   </div>
   
 
-  <p>This function returns an index of first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns an index of first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>findIndex(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>findIndex(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1526,15 +1524,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// 1</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// 1</span></pre>
     
-  
-
   
 
   
@@ -1544,9 +1538,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1560,9 +1554,12 @@
   </div>
   
 
-  <p>This function returns a first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -1612,7 +1609,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
         
 
       
@@ -1622,15 +1619,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">&#x27;A&#x27;</span> } } }], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// { c: { y: 3, z: &#x27;A&#x27; }, k: &#x27;y&#x27;, v: 3, origin: [{ ... }] }</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">'A'</span> } } }], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{ ... }] }</span></pre>
     
-  
-
   
 
   
@@ -1640,9 +1633,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1656,9 +1649,12 @@
   </div>
   
 
-  <p>This function returns a first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>search(v: Iterable, t: any): any</div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>search(v: Iterable, t: any): any</div>
   
   
 
@@ -1709,15 +1705,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></pre>
     
-  
-
   
 
   
@@ -1727,9 +1719,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1743,9 +1735,12 @@
   </div>
   
 
-  <p>This function returns an index of first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns an index of first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>searchIndex(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>searchIndex(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1796,15 +1791,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">&#x27;1&#x27;</span>) <span class="hljs-comment">// 0</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">'1'</span>) <span class="hljs-comment">// 0</span></pre>
     
-  
-
   
 
   
@@ -1814,9 +1805,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1830,9 +1821,12 @@
   </div>
   
 
-  <p>This function returns a first element found from an iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns a first element found from an iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>deepSearch(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>deepSearch(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -1883,15 +1877,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// { c: [&#x27;1&#x27;, 2, 3], k: 2, v: 3, origin: [...] }</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// { c: ['1', 2, 3], k: 2, v: 3, origin: [...] }</span></pre>
     
-  
-
   
 
   
@@ -1901,9 +1891,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -1917,9 +1907,12 @@
   </div>
   
 
-  <p>This function returns new array object which included all sub-array elements</p>
+  <div class="markdown-body">
+    <p>This function returns new array object which included all sub-array elements</p>
 
-    <div class='pre p1 fill-light mt0'>flat(v: Iterable, depth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>flat(v: Iterable, depth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1970,15 +1963,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>) <span class="hljs-comment">// [&#x27;1&#x27;, 2, 3, 4, 5, 6, 2, 8, 9]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">'1'</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>) <span class="hljs-comment">// ['1', 2, 3, 4, 5, 6, 2, 8, 9]</span></pre>
     
-  
-
   
 
   
@@ -1988,9 +1977,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2004,9 +1993,12 @@
   </div>
   
 
-  <p>This function returns new array object formed by applying a given callback function to each element of iterable object</p>
+  <div class="markdown-body">
+    <p>This function returns new array object formed by applying a given callback function to each element of iterable object</p>
 
-    <div class='pre p1 fill-light mt0'>flatMap(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>flatMap(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2066,15 +2058,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v.slice(<span class="hljs-number">0</span>)) <span class="hljs-comment">// [&#x27;1&#x27;, 2, 3, 4, 5, 6, 7, [8, 9]]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">'1'</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], v =&gt; v.slice(<span class="hljs-number">0</span>)) <span class="hljs-comment">// ['1', 2, 3, 4, 5, 6, 7, [8, 9]]</span></pre>
     
-  
-
   
 
   
@@ -2084,9 +2072,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2100,9 +2088,12 @@
   </div>
   
 
-  <p>This function returns whether in an array includes certain value and is not</p>
+  <div class="markdown-body">
+    <p>This function returns whether in an array includes certain value and is not</p>
 
-    <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -2152,13 +2143,11 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
         
 
       
     
-  
-
   
 
   
@@ -2176,13 +2165,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2196,9 +2183,12 @@
   </div>
   
 
-  <p>This function returns new array object sorted to ascending</p>
+  <div class="markdown-body">
+    <p>This function returns new array object sorted to ascending</p>
 
-    <div class='pre p1 fill-light mt0'>asc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>asc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2240,15 +2230,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>asc({ <span class="hljs-attr">x</span>: <span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-attr">y</span>: <span class="hljs-literal">null</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0xff</span> }) <span class="hljs-comment">// [null, &#x27;d&#x27;, 255]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>asc({ <span class="hljs-attr">x</span>: <span class="hljs-string">'d'</span>, <span class="hljs-attr">y</span>: <span class="hljs-literal">null</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0xff</span> }) <span class="hljs-comment">// [null, 'd', 255]</span></pre>
     
-  
-
   
 
   
@@ -2258,9 +2244,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2274,9 +2260,12 @@
   </div>
   
 
-  <p>This function returns new array object sorted to descending</p>
+  <div class="markdown-body">
+    <p>This function returns new array object sorted to descending</p>
 
-    <div class='pre p1 fill-light mt0'>desc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>desc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2318,15 +2307,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">&#x27;ee&#x27;</span>, [], <span class="hljs-number">2e4</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-number">0</span>]) <span class="hljs-comment">// [20000, 255, &#x27;ee&#x27;, &#x27;t&#x27;, &#x27;d&#x27;, true, Array(0), f (), 0, undefined]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">'d'</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">'ee'</span>, [], <span class="hljs-number">2e4</span>, () =&gt; {}, <span class="hljs-string">'t'</span>, <span class="hljs-number">0</span>]) <span class="hljs-comment">// [20000, 255, 'ee', 't', 'd', true, Array(0), f (), 0, undefined]</span></pre>
     
-  
-
   
 
   
@@ -2336,9 +2321,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2352,9 +2337,12 @@
   </div>
   
 
-  <p>This function returns new array object sorted ascending by object key</p>
+  <div class="markdown-body">
+    <p>This function returns new array object sorted ascending by object key</p>
 
-    <div class='pre p1 fill-light mt0'>ascBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>ascBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2404,15 +2392,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>) <span class="hljs-comment">// [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>) <span class="hljs-comment">// [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]</span></pre>
     
-  
-
   
 
   
@@ -2422,9 +2406,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2438,9 +2422,12 @@
   </div>
   
 
-  <p>This function returns new array object sorted descending by object key</p>
+  <div class="markdown-body">
+    <p>This function returns new array object sorted descending by object key</p>
 
-    <div class='pre p1 fill-light mt0'>descBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>descBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2490,15 +2477,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>) <span class="hljs-comment">// [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">'y'</span>) <span class="hljs-comment">// [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]</span></pre>
     
-  
-
   
 
   
@@ -2508,9 +2491,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2524,9 +2507,12 @@
   </div>
   
 
-  <p>This function inserts a value from the first index of an array object</p>
+  <div class="markdown-body">
+    <p>This function inserts a value from the first index of an array object</p>
 
-    <div class='pre p1 fill-light mt0'>preInsert(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>preInsert(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2577,8 +2563,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -2591,13 +2575,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2611,9 +2593,12 @@
   </div>
   
 
-  <p>This function inserts a value from a target index of an array</p>
+  <div class="markdown-body">
+    <p>This function inserts a value from a target index of an array</p>
 
-    <div class='pre p1 fill-light mt0'>insert(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>insert(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2673,8 +2658,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -2687,13 +2670,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2707,9 +2688,12 @@
   </div>
   
 
-  <p>This function replaces from target index value of an array to new values</p>
+  <div class="markdown-body">
+    <p>This function replaces from target index value of an array to new values</p>
 
-    <div class='pre p1 fill-light mt0'>replace(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>replace(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2769,15 +2753,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">&#x27;ADD&#x27;</span>) <span class="hljs-comment">// [1, 2, 33, &#x27;ADD&#x27;, 4]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">'ADD'</span>) <span class="hljs-comment">// [1, 2, 33, 'ADD', 4]</span></pre>
     
-  
-
   
 
   
@@ -2787,9 +2767,9 @@
   
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2803,9 +2783,12 @@
   </div>
   
 
-  <p>This function removes a value at a target index of an array object</p>
+  <div class="markdown-body">
+    <p>This function removes a value at a target index of an array object</p>
 
-    <div class='pre p1 fill-light mt0'>remove(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>remove(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2851,8 +2834,6 @@
 
       
     
-  
-
   
 
   
@@ -2870,13 +2851,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2890,9 +2869,12 @@
   </div>
   
 
-  <p>This function removes a value from a target index of an array object</p>
+  <div class="markdown-body">
+    <p>This function removes a value from a target index of an array object</p>
 
-    <div class='pre p1 fill-light mt0'>removeAll(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>removeAll(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2943,8 +2925,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -2957,13 +2937,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -2977,9 +2955,12 @@
   </div>
   
 
-  <p>This function returns last index of an array object</p>
+  <div class="markdown-body">
+    <p>This function returns last index of an array object</p>
 
-    <div class='pre p1 fill-light mt0'>lastIndex(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>lastIndex(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -3021,8 +3002,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -3035,13 +3014,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -3055,9 +3032,12 @@
   </div>
   
 
-  <p>This function returns new array object shuffled as the random</p>
+  <div class="markdown-body">
+    <p>This function returns new array object shuffled as the random</p>
 
-    <div class='pre p1 fill-light mt0'>shuffle(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>shuffle(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -3099,8 +3079,6 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
@@ -3113,13 +3091,11 @@
   
 
   
-
-  
 </section>
 
-          
         
-          
+      
+        
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
   
@@ -3133,9 +3109,12 @@
   </div>
   
 
-  <p>This function return new object accumulated every value</p>
+  <div class="markdown-body">
+    <p>This function return new object accumulated every value</p>
 
-    <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  </div>
+
+  <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
   
   
 
@@ -3185,7 +3164,7 @@
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+      <code>any</code>:
         
 
       
@@ -3195,15 +3174,11 @@
   
 
   
-
-  
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], <span class="hljs-function">(<span class="hljs-params">acc, v, k</span>) =&gt;</span> { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {}) <span class="hljs-comment">// { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], (acc, v, k) =&gt; { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {}) <span class="hljs-comment">// { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }</span></pre>
     
-  
-
   
 
   
@@ -3213,12 +3188,22 @@
   
 </section>
 
-          
         
+      
+    </main>
+
+    <footer class='page__footer' role='contentinfo'>
+      <div class='inner'>
+        <p>
+          <a href='https://developmentseed.org' title='Visit Development Seed website'><img src='assets/images/devseed-logo-symbol.svg' alt='Development Seed logo symbol' width='512' height='152'> <span>Development Seed</span></a>
+          <small>2021</small>
+        </p>
       </div>
-    </div>
+    </footer>
+  </div>
+
   <script src='assets/anchor.js'></script>
-  <script src='assets/split.js'></script>
   <script src='assets/site.js'></script>
+  <script src='assets/nav.js'></script>
 </body>
 </html>

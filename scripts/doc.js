@@ -12,8 +12,10 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
     process.exit(1);
   } else {
     documentation
-      .build(filePaths, { shallow: true })
-      .then(documentation.formats.html)
+      .build(filePaths, {
+        shallow: true,
+      })
+      .then(ret => documentation.formats.html(ret, { theme: 'node_modules/documentation-devseed-theme' }))
       .then(output => {
         const reader = streamArray(output);
 
