@@ -2,23 +2,77 @@
 
 ![npm](https://img.shields.io/npm/v/array-organizer) [![](https://data.jsdelivr.com/v1/package/npm/array-organizer/badge)](https://www.jsdelivr.com/package/npm/array-organizer) ![npm bundle size](https://img.shields.io/bundlephobia/min/array-organizer) ![npm](https://img.shields.io/npm/dm/array-organizer) ![NPM](https://img.shields.io/npm/l/array-organizer)
 
-This library will be used to handling data of an array type 
+# Concept
 
-[API Documentation](http://mohwa.github.io/array-organizer)
+- You will be able to use iterable object of all type on any API of this library
+
+> ex: Array, Plain object, Map, Set, Generator Iterable object ...
+                                                                                      
+- The library included essential apis necessary when development an application
+
+> I think not need big library like the [lodash](https://lodash.com/) or [underscore](https://underscorejs.org/) when development most an application
+
+- Supports [tree shaking](https://webpack.js.org/guides/tree-shaking/) for the application size of your project
+ 
+- Supports multiple browsers
  
  # Install
  
  ```javascript
  npm i array-organizer
  ```
+
+# API Documentation
+
+http://mohwa.github.io/array-organizer
  
- # Support Platforms
+# Support Platforms
  
- IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` version later).
+IE9 later, All modern browsers(Chrome, Safari, Edge ...), NodeJS(`10.0.0` version later)
+
+## Variety ways which use together a native apis
+
+Any apis can be used more powerfully together a native apis like following examples
+
+```javascript
+import { toArray } from 'array-organizer';
+
+toArray({ x: 1, y: 2, z: '3' }).every(({ v, k }, i) => typeof v === 'number') // false
+
+toArray({ x: 'spray', y: 'limit', z: 'elite', xx: 'exuberant', yy: 'destruction', zz: 'present' }).filter(
+({ v, k }) => v.length > 6
+) // [{ k: "xx", v: "exuberant" }, { k: "yy", v: "destruction" }, { k: "zz", v: "present" }]
+
+toArray([1, 2, 3]).join('-') // 1-2-3
+
+const popArr = toArray({ x: 1, y: 2, z: 3 });
+popArr.pop();
  
- ## toArray
+console.log(popArr); // [{ k: "x", v: 1 }, { k: "y", v: 2 }]
+
+const pushArr = toArray({ x: 1, y: 2, z: 3 });
+pushArr.push({ xx: 4 });
+
+console.log(pushArr); // [{ k: "x", v: 1 }, { k: "y", v: 2 }, { k: "z", v: 3 }, { xx: 4 }]
+
+toArray({ x: 1, y: 2, z: 3 }).reverse(); // [{ k: "z", v: 3 }, { k: "y", v: 2 }, { k: "x", v: 1 }]
+
+const shiftArr = toArray({ x: 1, y: 2, z: 3 });
+shiftArr.shift();
+
+console.log(shiftArr); // [{ k: "y", v: 2 }, { k: "z", v: 3 }]
+
+toArray({ x: '1', y: '2', z: 3 }).some(({ v, k }, i) => typeof v === 'number') // true
+
+const unShiftArr = toArray({ x: 1, y: 2, z: 3 });
+unShiftArr.unshift({ xx: 4 });
+
+console.log(unShiftArr); // [{ xx: 4 }, { k: "x", v: 1 }, { k: "y", v: 2 }, { k: "z", v: 3 }]
+```
  
- This function converts given iterable object to an array object
+## toArray
+ 
+ This api will be able to convert iterable object of all types to new an array object
  
  ```javascript
  import { toArray } from 'array-organizer';
@@ -73,11 +127,10 @@ toArray(s); // [1, 2, 3]
 
 ## Main API 
 
-You will be able to used for add or remove or search every element of iterable object 
+You will be able to use for add or remove or search every element of iterable object via various apis 
  
 ```javascript
 import {
-  forEach,
   fill,
   find,
   search,
@@ -94,21 +147,13 @@ import {
   ascBy,
   descBy,
   reduce,
-  includes
+  forEach,
+  concat,
+  indexOf,
+  lastIndexOf,
+  keys,
+  values
 } from 'array-organizer';
-
-forEach('  ', (v, k) => console.log(v)); // '', ''
-forEach('test', (v, k) => console.log(v)); // 't', 'e', 's', 't'
-forEach([1, 2, 3], (v, k) => console.log(v)); // 1, 2, 3
-forEach({ x: 1, y: 2, z: 3 }, (v) => console.log(v)); // 1, 2, 3
-forEach(new Map([['x', 1], ['y', 2], ['z', 3]]), (v) => console.log(v)); // 1, 2, 3
-forEach(new Set([1, 2, 3]), (v) => console.log(v)); // 1, 2, 3
-
-reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
-
-// Will be found a 2 from an array object 
-includes([1, 2, 3], 2); // true
-includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
 
 // Will be filled 7 from index 2 until end index of an array object
 fill([1, 2, 3, 4], 7, 2); // [1, 2, 7, 7]
@@ -119,10 +164,6 @@ find(['1', 2, 3], v => typeof v === 'number'); // 2
 find({ x: 11, y: 22, z: 33 }, ({ v }) => typeof v === 'number'); // { k: 'x', v: 11 }
 
 search(['1', 2, 3], 3); // 3
-
-// Will be found a 2 from an array object 
-includes([1, 2, 3], 2); // true
-includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
 
 asc(['d', null, 0xff, true, { x: 1 }, 'ee', new Map(), 't', 0]); // [null, { x: 1 }, {}, 0, true, 'd', 't', 'ee', 255]
 asc({ x: 'd', y: null, z: 0xff }); // [null, 'd', 255]
@@ -142,6 +183,10 @@ replace([1, 2, 3, 4], 2, 33, 'ADD'); // [1, 2, 33, 'ADD', 4]
 remove([1, 2, 3, 4], 3); // [1, 2, 3]
 removeAll([1, 2, 3, 4], 1); // [1]
 
+// Will be found a 2 from an array object 
+includes([1, 2, 3], 2); // true
+includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
+
 // In result c is container object of y property
 deepFind([{ x: { xx: { y: 3, z: 'A' } } }], v => typeof v === 'number'); // { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{ ... }] }
 deepSearch(
@@ -156,6 +201,43 @@ deepSearch(
 // Will be ascending based y property
 ascBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]
 descBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]
+
+reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
+
+forEach('  ', (v, k) => console.log(v)); // '', ''
+forEach('test', (v, k) => console.log(v)); // 't', 'e', 's', 't'
+forEach([1, 2, 3], (v, k) => console.log(v)); // 1, 2, 3
+forEach({ x: 1, y: 2, z: 3 }, (v) => console.log(v)); // 1, 2, 3
+forEach(new Map([['x', 1], ['y', 2], ['z', 3]]), (v) => console.log(v)); // 1, 2, 3
+forEach(new Set([1, 2, 3]), (v) => console.log(v)); // 1, 2, 3
+
+concat(
+  { x: 1, y: 2, z: 3 },
+  { xx: 1, yy: 2, zz: 3 },
+  function() {},
+  true,
+  false,
+  {},
+  [],
+  new Map([['x', 1]]),
+  new Set([11, 22, 33]),
+  'test',
+  (function*() {
+    yield 88;
+  })()
+); // [{ k: "x", v: 1 }, .... , 88]
+
+indexOf([1, 2, 3], 2); // 1
+indexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
+
+lastIndexOf([1, 2, 3], 2); // 1
+lastIndexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
+
+keys([1, , 3]); // [0, 1, 2]
+keys({ x: 1, y: 2, z: 3 }); // ['x', 'y', 'z']
+
+values([1, , 3]); // [1, undefined, 3]
+values({ x: 1, y: 2, z: 3 }); // [1, 2, 3]
 ``` 
  
 ## Other API
