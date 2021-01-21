@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "This library will be used to handling data of an array type",
   "keywords": [
     "array",
@@ -12,16 +12,18 @@
   ],
   "module": "dist/array-organizer.esm.js",
   "main": "dist/array-organizer.js",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
     "start:node": "babel-node ./examples",
-    "build": "npm run clean && rollup -c ./build/rollup.config.js",
+    "build": "npm run clean && rollup -c ./build/rollup.config.js && npx tsc && npm run clean:tsc",
     "deploy": "npm run lint && npm run build && npm run doc && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
     "coverage": "jest --config jest.config.js --ci --coverage",
     "lint": "eslint 'lib/**/*' --fix",
     "clean": "rimraf dist",
+    "clean:tsc": "rimraf dist/polyfill.d.ts dist/_utils.d.ts",
     "doc": "babel-node scripts/doc.js"
   },
   "repository": {
@@ -49,6 +51,7 @@
     "@babel/node": "^7.12.10",
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
     "@rollup/plugin-html": "^0.2.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "babel-eslint": "^10.0.3",
@@ -56,7 +59,7 @@
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.3",
     "documentation": "^13.1.0",
-    "documentation-devseed-theme": "git://github.com/mohwa/documentation-devseed-theme.git",
+    "documentation-devseed-theme": "^0.1.7",
     "emnida": "^1.1.16",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.4.0",
@@ -74,7 +77,8 @@
     "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-uglify": "^6.0.4",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "typescript": "^4.1.3"
   },
   "husky": {
     "hooks": {
