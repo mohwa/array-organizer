@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>array-organizer 1.1.1 | Documentation</title>
+  <title>array-organizer 1.2.0 | Documentation</title>
   <meta name='description' content='This library will be used to handling data of an array type'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>array-organizer</h3>
-          <div class='mb1'><code>1.1.1</code></div>
+          <div class='mb1'><code>1.2.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -72,6 +72,16 @@
                   href='#indexof'
                   class="">
                   indexOf
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#join'
+                  class="">
+                  join
                   
                 </a>
                 
@@ -419,7 +429,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>forEach([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v, k</span>) </span>{}, <span class="hljs-built_in">this</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'>forEach(<span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">v, k</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(v)); <span class="hljs-comment">// &#x27;t&#x27;, &#x27;e&#x27;, &#x27;s&#x27;, &#x27;t&#x27;</span></pre>
     
   
 
@@ -515,7 +525,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>toArray([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v, k</span>) </span>{ <span class="hljs-keyword">return</span> { v, <span class="hljs-attr">vv</span>: <span class="hljs-built_in">this</span> }; }, <span class="hljs-built_in">this</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'>toArray({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }); <span class="hljs-comment">// [{ k: &#x27;x&#x27;, v: 1 }, { k: &#x27;y&#x27;, v: 2 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
     
   
 
@@ -593,7 +603,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// [1, 2, 3, 4]</span></pre>
     
   
 
@@ -680,7 +690,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>concat({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xxx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yyy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zzz</span>: <span class="hljs-number">3</span> })</pre>
+      <pre class='p1 overflow-auto round fill-light'>concat({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> }, { <span class="hljs-attr">xxx</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">yyy</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">zzz</span>: <span class="hljs-number">3</span> }) <span class="hljs-comment">// [{ k: &#x27;x&#x27;, 1 } ... { k: &#x27;xxx&#x27;, v: 1 }])</span></pre>
     
   
 
@@ -777,7 +787,94 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>indexOf([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>indexOf({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">yy</span>: { <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> } }, <span class="hljs-number">44</span>); <span class="hljs-comment">// -1</span></pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='join'>
+      join
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>This function returns joined value as a separator from every elements of an iterable object</p>
+
+    <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
+	    Iterable object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>separator</span> <code class='quiet'>(any)</code>
+	    separate value
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>join({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-string">&#x27;-&#x27;</span>) <span class="hljs-comment">// 1-2-3</span></pre>
     
   
 
@@ -874,7 +971,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>lastIndexOf([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>lastIndexOf({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">yy</span>: { <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> } }, <span class="hljs-number">44</span>) <span class="hljs-comment">// -1</span></pre>
     
   
 
@@ -952,7 +1049,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>keys([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>keys([<span class="hljs-number">1</span>, , <span class="hljs-number">3</span>]) <span class="hljs-comment">// [0, 1, 2]</span></pre>
     
   
 
@@ -1030,7 +1127,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>values([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>values({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }) <span class="hljs-comment">// [1, 2, 3]</span></pre>
     
   
 
@@ -1136,8 +1233,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>copyWithin([<span class="hljs-number">1</span>, <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-number">3</span>], <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
-copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// // [{ k: &#x27;y&#x27;, v: &#x27;2&#x27; }, { k: &#x27;z&#x27;, v: 3 }, { k: &#x27;z&#x27;, v: 3 }]</span></pre>
     
   
 
@@ -1243,7 +1339,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>fill([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">7</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>fill([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">7</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [1, 2, 7, 7]</span></pre>
     
   
 
@@ -1339,7 +1435,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>find([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// 2</span></pre>
     
   
 
@@ -1435,7 +1531,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>findIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// 1</span></pre>
     
   
 
@@ -1531,7 +1627,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">&#x27;A&#x27;</span> }}}], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> isNumber(v), <span class="hljs-built_in">this</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">&#x27;A&#x27;</span> } } }], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;number&#x27;</span>) <span class="hljs-comment">// { c: { y: 3, z: &#x27;A&#x27; }, k: &#x27;y&#x27;, v: 3, origin: [{ ... }] }</span></pre>
     
   
 
@@ -1618,7 +1714,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></pre>
     
   
 
@@ -1705,7 +1801,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">&#x27;1&#x27;</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">&#x27;1&#x27;</span>) <span class="hljs-comment">// 0</span></pre>
     
   
 
@@ -1792,7 +1888,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// { c: [&#x27;1&#x27;, 2, 3], k: 2, v: 3, origin: [...] }</span></pre>
     
   
 
@@ -1879,7 +1975,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>flat([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">2</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-number">2</span>) <span class="hljs-comment">// [&#x27;1&#x27;, 2, 3, 4, 5, 6, 2, 8, 9]</span></pre>
     
   
 
@@ -1975,7 +2071,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v.slice(<span class="hljs-number">0</span>), <span class="hljs-built_in">this</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>flatMap([<span class="hljs-string">&#x27;1&#x27;</span>, [<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, [<span class="hljs-number">8</span>, <span class="hljs-number">9</span>]]], <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> v.slice(<span class="hljs-number">0</span>)) <span class="hljs-comment">// [&#x27;1&#x27;, 2, 3, 4, 5, 6, 7, [8, 9]]</span></pre>
     
   
 
@@ -2071,7 +2167,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>includes([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>) <span class="hljs-comment">// true</span></pre>
     
   
 
@@ -2149,7 +2245,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>asc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">null</span>, <span class="hljs-number">0xff</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>asc({ <span class="hljs-attr">x</span>: <span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-attr">y</span>: <span class="hljs-literal">null</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">0xff</span> }) <span class="hljs-comment">// [null, &#x27;d&#x27;, 255]</span></pre>
     
   
 
@@ -2227,7 +2323,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">&#x27;ee&#x27;</span>, [], <span class="hljs-number">2e4</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-number">0</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>desc([<span class="hljs-string">&#x27;d&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">0xff</span>, <span class="hljs-string">&#x27;ee&#x27;</span>, [], <span class="hljs-number">2e4</span>, <span class="hljs-function">() =&gt;</span> {}, <span class="hljs-string">&#x27;t&#x27;</span>, <span class="hljs-number">0</span>]) <span class="hljs-comment">// [20000, 255, &#x27;ee&#x27;, &#x27;t&#x27;, &#x27;d&#x27;, true, Array(0), f (), 0, undefined]</span></pre>
     
   
 
@@ -2313,7 +2409,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>ascBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>) <span class="hljs-comment">// [{ ...y: 11 }, { ...y: 22 }, { ...y: 33 }]</span></pre>
     
   
 
@@ -2399,7 +2495,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>descBy([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">11</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span> }, { <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">33</span> }], <span class="hljs-string">&#x27;y&#x27;</span>) <span class="hljs-comment">// [{ ...y: 33 }, { ...y: 22 }, { ...y: 11 }]</span></pre>
     
   
 
@@ -2486,7 +2582,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>preInsert([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>preInsert([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">11</span>) <span class="hljs-comment">// [11, 22, 2, 3, 4]</span></pre>
     
   
 
@@ -2582,7 +2678,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>insert([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">1</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>, <span class="hljs-number">44</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>insert([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">1</span>, <span class="hljs-number">22</span>) <span class="hljs-comment">// [1, 22, 2, 3, 4]</span></pre>
     
   
 
@@ -2678,7 +2774,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">&#x27;ADD&#x27;</span>)</pre>
+      <pre class='p1 overflow-auto round fill-light'>replace([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">2</span>, <span class="hljs-number">33</span>, <span class="hljs-string">&#x27;ADD&#x27;</span>) <span class="hljs-comment">// [1, 2, 33, &#x27;ADD&#x27;, 4]</span></pre>
     
   
 
@@ -2765,7 +2861,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>remove([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">3</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'>remove([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// [1, 2, 3]</span></pre>
     
   
 
@@ -2852,7 +2948,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>removeAll([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">1</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'>removeAll([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">1</span>) <span class="hljs-comment">// [1]</span></pre>
     
   
 
@@ -2930,7 +3026,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>lastIndex([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>lastIndex([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]) <span class="hljs-comment">// 3</span></pre>
     
   
 
@@ -3008,7 +3104,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>shuffle([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])</pre>
+      <pre class='p1 overflow-auto round fill-light'>shuffle([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]) <span class="hljs-comment">// [3, 1, 2, 4]</span></pre>
     
   
 
@@ -3104,7 +3200,7 @@ copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], <span class="hljs-function">(<span class="hljs-params">acc, v, k</span>) =&gt;</span> { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {});</pre>
+      <pre class='p1 overflow-auto round fill-light'>reduce([{ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span> }, { <span class="hljs-attr">y</span>: <span class="hljs-number">2</span> }, { <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }], <span class="hljs-function">(<span class="hljs-params">acc, v, k</span>) =&gt;</span> { acc[k] = v; <span class="hljs-keyword">return</span> acc; }, {}) <span class="hljs-comment">// { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }</span></pre>
     
   
 
