@@ -217,10 +217,10 @@ try {
 console.log(of(1, 2, 3, 4));
 console.log(of({ x: 1 }, { x: 2 }, { x: 3 }));
 
-console.log(copyWithin([1, '2', 3], 0, 1, 2)); // [2, 3, 3]
+console.log(copyWithin([1, '2', 3], 0)); // [2, 3, 3]
 console.log(copyWithin({ x: 1, y: '2', z: 3 }, 0, 1, 2)); // [2, 3, 3]
 
-console.log(fill([1, 2, 3, 4], 7, 2)); // [1, 2, 7, 7]
+console.log(fill([1, 2, 3, 4], 77777)); // [1, 2, 7, 7]
 console.log(fill([1, 2, 3, 4], 7)); // [7, 7, 7, 7]
 console.log(fill({ x: 11, y: 22, z: 33 }, 7, 0, 1)); // [ 7, 7, { v: 33, k: 'z' } ]
 
@@ -256,7 +256,7 @@ console.log(desc(['d', true, undefined, 0xff, 'ee', [], 2e4, () => {}, 't', 0]))
 console.log(preInsert([1, 2, 3, 4], 11));
 console.log(preInsert({ xx: 22, yy: 33 }, 3));
 
-console.log(insert([1, 2, 3, 4], 1, 22));
+console.log(insert([1, 2, 3, 4], 1, 22, 44, 55));
 
 console.log(replace([1, 2, 3, 4], 2, 33, 'ADD'));
 
