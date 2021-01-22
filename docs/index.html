@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-811' />
-  <title>array-organizer 1.2.1 | Documentation</title>
+  <title>array-organizer 1.2.2 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet' />
   <link href='assets/style.css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div class='inner'>
         <div class='page__headline'>
           <h1 class='mb0 no-anchor page__title'><a style='color:unset' href="https://github.com/mohwa/array-organizer#readme">array-organizer</a></h1>
-          <p class='mb1 page__subtitle'><code>1.2.1</code></p>
+          <p class='mb1 page__subtitle'><code>1.2.2</code></p>
         </div>
 
         <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
@@ -382,7 +382,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>forEach(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any)</div>
+  <div class='pre p1 fill-light mt0'>forEach(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, context: any?)</div>
   
   
 
@@ -399,8 +399,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -417,7 +417,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -469,7 +469,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>toArray(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>toArray(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -486,8 +486,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -495,7 +495,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?)</code>
 	    Function which will be call on every element of iterable object
 
           </div>
@@ -504,7 +504,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -564,7 +564,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>of(args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>of(values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -581,8 +581,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Arguments
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be included
 
           </div>
           
@@ -641,7 +641,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>concat(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>concat(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -658,8 +658,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -667,8 +667,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Argument values
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be merged
 
           </div>
           
@@ -727,7 +727,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>indexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>indexOf(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any, fromIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -744,8 +744,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -762,7 +762,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>from</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            <span class='code bold'>fromIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>0</code>)</code>
 	    Start index which will be search
 
@@ -823,7 +823,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>join(v: Iterable, separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  <div class='pre p1 fill-light mt0'>join(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), separator: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
   
   
 
@@ -840,8 +840,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -909,7 +909,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>lastIndexOf(v: Iterable, searchValue: any, from: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>lastIndexOf(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any, fromIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -926,8 +926,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -944,8 +944,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>from</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>Array.length-1</code>)</code>
+            <span class='code bold'>fromIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>Iterable.length-1</code>)</code>
 	    Start index which will be search from last index
 
           </div>
@@ -1005,7 +1005,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>keys(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>keys(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1022,8 +1022,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1082,7 +1082,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>values(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>values(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1099,8 +1099,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1159,7 +1159,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>copyWithin(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>copyWithin(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1176,8 +1176,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1185,7 +1185,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    Target index which to copied
 
           </div>
@@ -1194,7 +1194,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>0</code>)</code>
 	    Start index which to start copying
 
           </div>
@@ -1204,7 +1205,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>Array.length</code>)</code>
+            = <code>Iterable.length</code>)</code>
 	    End index which to end copying(will be increase 1 an end index)
 
           </div>
@@ -1264,7 +1265,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>fill(v: Iterable, vv: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>fill(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), vv: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, end: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1281,8 +1282,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1299,7 +1300,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>0</code>)</code>
 	    Start index
 
           </div>
@@ -1309,7 +1311,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
-            = <code>Array.length</code>)</code>
+            = <code>Iterable.length</code>)</code>
 	    End index(will be increase 1 an end index)
 
           </div>
@@ -1369,7 +1371,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>find(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): any</div>
+  <div class='pre p1 fill-light mt0'>find(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, context: any?): any</div>
   
   
 
@@ -1386,8 +1388,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1404,7 +1406,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -1464,7 +1466,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>findIndex(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>findIndex(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1481,8 +1483,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1499,7 +1501,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -1559,7 +1561,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>deepFind(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  <div class='pre p1 fill-light mt0'>deepFind(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -1576,8 +1578,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1594,7 +1596,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -1654,7 +1656,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>search(v: Iterable, t: any): any</div>
+  <div class='pre p1 fill-light mt0'>search(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): any</div>
   
   
 
@@ -1671,8 +1673,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1680,7 +1682,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
 	    Value which will be search
 
           </div>
@@ -1740,7 +1742,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>searchIndex(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>searchIndex(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -1757,8 +1759,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1766,7 +1768,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
 	    Value which will be search
 
           </div>
@@ -1826,7 +1828,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>deepSearch(v: Iterable, t: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  <div class='pre p1 fill-light mt0'>deepSearch(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -1843,8 +1845,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1852,7 +1854,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
 	    Value which will be search
 
           </div>
@@ -1912,7 +1914,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>flat(v: Iterable, depth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>flat(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), depth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -1929,8 +1931,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -1938,7 +1940,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>depth</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>depth</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
 	    Depth level specifying how deep a nested array structure should be flattened
 
           </div>
@@ -1998,7 +2000,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>flatMap(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, _this: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>flatMap(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2015,8 +2017,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2033,7 +2035,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>_this</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
 	    Value which will be used as this context when executing given function
 
           </div>
@@ -2093,7 +2095,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>includes(v: Iterable, t: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  <div class='pre p1 fill-light mt0'>includes(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any, start: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -2110,8 +2112,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2119,7 +2121,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
 	    Target Value which will be search
 
           </div>
@@ -2128,7 +2130,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>start</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
 	    Start index which to searching
 
           </div>
@@ -2188,7 +2190,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>asc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>asc(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2205,8 +2207,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2265,7 +2267,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>desc(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>desc(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2282,8 +2284,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2342,7 +2344,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>ascBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>ascBy(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2359,8 +2361,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2427,7 +2429,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>descBy(v: Iterable, key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>descBy(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), key: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2444,8 +2446,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2512,7 +2514,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>preInsert(v: Iterable, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>preInsert(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2529,8 +2531,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2538,8 +2540,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Values
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be inserted
 
           </div>
           
@@ -2598,7 +2600,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>insert(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>insert(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2615,8 +2617,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2624,7 +2626,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    Target index
 
           </div>
@@ -2633,8 +2635,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
-	    Values
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be inserted
 
           </div>
           
@@ -2693,7 +2695,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>replace(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, args: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>replace(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2710,8 +2712,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2719,7 +2721,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    Target index
 
           </div>
@@ -2728,7 +2730,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>args</span> <code class='quiet'>(any)</code>
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
 	    Values which will be replaced
 
           </div>
@@ -2788,7 +2790,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>remove(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>remove(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2805,8 +2807,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2814,7 +2816,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    Target index
 
           </div>
@@ -2874,7 +2876,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>removeAll(v: Iterable, t: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>removeAll(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2891,8 +2893,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -2900,7 +2902,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>t</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    Target index
 
           </div>
@@ -2960,7 +2962,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>lastIndex(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  <div class='pre p1 fill-light mt0'>lastIndex(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -2977,8 +2979,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -3037,7 +3039,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>shuffle(v: Iterable): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>shuffle(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -3054,8 +3056,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
@@ -3114,7 +3116,7 @@
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>reduce(v: Iterable, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
+  <div class='pre p1 fill-light mt0'>reduce(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>, initV: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): any</div>
   
   
 
@@ -3131,8 +3133,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>v</span> <code class='quiet'>(Iterable)</code>
-	    Iterable object
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    Iterable object or Plain object
 
           </div>
           
