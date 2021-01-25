@@ -82,10 +82,17 @@ forEach(true, (v, k) => {
   console.log(v, k);
 });
 
-console.log(
-  111,
-  concat({ x: 1, y: 2, z: 3 }, { xx: 1, yy: 2, zz: 3 }, function() {}, true, false, {}, [])
-);
+const fn1 = function(x, y) {};
+
+fn1.x = 1;
+fn1.y = 2;
+fn1.z = 3;
+
+forEach(fn1, (v, k) => {
+  console.log(v, k);
+});
+
+console.log(concat({ x: 1, y: 2, z: 3 }, { xx: 1, yy: 2, zz: 3 }, function() {}, true, false, {}, []));
 
 try {
   console.log(
@@ -189,6 +196,14 @@ console.log(
     { x: 1 }
   )
 );
+
+const fn2 = function(x, y) {};
+
+fn2.x = 1;
+fn2.y = 2;
+fn2.z = 3;
+
+console.log(toArray(fn2));
 
 console.log(toArray({ x: 1, y: 2, z: 3 }).concat({ xx: 1, yy: 2, zz: 3 }));
 
