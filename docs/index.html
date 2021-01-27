@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-811' />
-  <title>array-organizer 1.2.4 | Documentation</title>
+  <title>array-organizer 1.3.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet' />
   <link href='assets/style.css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div class='inner'>
         <div class='page__headline'>
           <h1 class='mb0 no-anchor page__title'><a style='color:unset' href="https://github.com/mohwa/array-organizer#readme">array-organizer</a></h1>
-          <p class='mb1 page__subtitle'><code>1.2.4</code></p>
+          <p class='mb1 page__subtitle'><code>1.3.0</code></p>
         </div>
 
         <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
@@ -271,9 +271,39 @@
                 
                   
                   <li><a
-                    href='#preinsert'
+                    href='#unshift'
                     class=' ppn__menu-item'>
-                    preInsert
+                    unshift
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#push'
+                    class=' ppn__menu-item'>
+                    push
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#insertbefore'
+                    class=' ppn__menu-item'>
+                    insertBefore
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#insertafter'
+                    class=' ppn__menu-item'>
+                    insertAfter
                     
                   </a>
                   
@@ -2501,8 +2531,8 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='preinsert'>
-      preInsert
+    <h3 class='fl m0' id='unshift'>
+      unshift
     </h3>
     
     
@@ -2510,11 +2540,11 @@
   
 
   <div class="markdown-body">
-    <p>This function inserts a value from the first index of an array object</p>
+    <p>This function inserts a value from first index of an iterable object or a plain object</p>
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>preInsert(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  <div class='pre p1 fill-light mt0'>unshift(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -2568,7 +2598,283 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>preInsert([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">11</span>) <span class="hljs-comment">// [11, 22, 2, 3, 4]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>unshift([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>) <span class="hljs-comment">// [ 11, 22, 33, 1, 2, 3 ]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='push'>
+      push
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function inserts a value from last index of an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>push(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be inserted
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>push([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>) <span class="hljs-comment">// [ 1, 2, 3, 11, 22, 33 ]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='insertbefore'>
+      insertBefore
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function inserts a value from then on before of target index of an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>insertBefore(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Target index
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be inserted
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>insertBefore([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">2</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>) <span class="hljs-comment">// [ 1, 22, 33, 2, 3 ]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='insertafter'>
+      insertAfter
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function inserts a value from then on after of target index of an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>insertAfter(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), targetIndex: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, values: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>targetIndex</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Target index
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>values</span> <code class='quiet'>(any)</code>
+	    Values which will be inserted
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>insertAfter([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">1</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>) <span class="hljs-comment">// [ 1, 2, 22, 33, 3 ]</span></pre>
     
   
 
@@ -2596,7 +2902,7 @@
   
 
   <div class="markdown-body">
-    <p>This function inserts a value from a target index of an array</p>
+    <p>This function inserts a value from a target index of an iterable object or a plain object</p>
 
   </div>
 
@@ -2691,7 +2997,7 @@
   
 
   <div class="markdown-body">
-    <p>This function replaces from target index value of an array to new values</p>
+    <p>This function replaces from target index value of an iterable object or a plain object to new values</p>
 
   </div>
 
@@ -2786,7 +3092,7 @@
   
 
   <div class="markdown-body">
-    <p>This function removes a value at a target index of an array object</p>
+    <p>This function removes a value at a target index of an iterable object or a plain object</p>
 
   </div>
 
@@ -2872,7 +3178,7 @@
   
 
   <div class="markdown-body">
-    <p>This function removes a value from a target index of an array object</p>
+    <p>This function removes a value from a target index of an iterable object or a plain object</p>
 
   </div>
 
@@ -2958,7 +3264,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns last index of an array object</p>
+    <p>This function returns last index of an iterable object or a plain object</p>
 
   </div>
 
@@ -3112,7 +3418,7 @@
   
 
   <div class="markdown-body">
-    <p>This function return new object accumulated every value</p>
+    <p>This function return new object accumulated every value of an iterable object or a plain object</p>
 
   </div>
 
