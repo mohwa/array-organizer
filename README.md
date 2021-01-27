@@ -134,7 +134,6 @@ import {
   search,
   asc,
   desc,
-  preInsert,
   insert,
   replace,
   remove,
@@ -151,7 +150,11 @@ import {
   lastIndexOf,
   keys,
   values,
-  join
+  join,
+  unshift,
+  push,
+  insertBefore,
+  insertAfter
 } from 'array-organizer';
 
 // Will be filled 7 from index 2 until end index of an array object
@@ -170,9 +173,6 @@ asc({ x: 'd', y: null, z: 0xff }); // [null, 'd', 255]
 desc([5, 3, 4, 6, 1, 2]); // [6, 5, 4, 3, 2, 1]
 // Will be sorted after convert 0xff to number 255
 desc(['d', true, undefined, 0xff, 'ee', [], 2e4, () => {}, 't', 0]); // [20000, 255, 'ee', 't', 'd', true, Array(0), f (), 0, undefined] 
-
-preInsert([1, 2, 3, 4], 11); // [11, 22, 2, 3, 4]
-preInsert({ xx: 22, yy: 33 }, 3); // [3, { k: 'xx', v: 22 }, { k: 'yy', v: 33 }]
 
 // Will be inserted a 22 to index 1
 insert([1, 2, 3, 4], 1, 22); // [1, 22, 2, 3, 4]
@@ -239,6 +239,20 @@ values([1, , 3]); // [1, undefined, 3]
 values({ x: 1, y: 2, z: 3 }); // [1, 2, 3]
 
 join({ x: 1, y: 2, z: 3 }, '-') // '1-2-3'
+
+unshift([], 11, 22, 33); // [ 11, 22, 33 ]
+unshift([1, 2, 3], 11, 22, 33); // [ 11, 22, 33, 1, 2, 3 ]
+
+push([], 11, 22, 33); // [ 11, 22, 33 ]
+push([1, 2, 3], 11, 22, 33); // [ 1, 2, 3, 11, 22, 33 ]
+
+insertBefore([1, 2, 3], -1, 22, 33); // [ 22, 33, 1, 2, 3 ]
+insertBefore([1, 2, 3], 88, 22, 33); // [ 1, 2, 3, 22, 33 ]
+insertBefore([1, 2, 3], 2, 22, 33); // [ 1, 22, 33, 2, 3 ]
+
+insertAfter([1, 2, 3], -1, 22, 33); // [ 22, 33, 1, 2, 3 ]
+insertAfter([1, 2, 3], 88, 22, 33); // [ 1, 2, 3, 22, 33 ]
+insertAfter([1, 2, 3], 1, 22, 33); // [ 1, 2, 22, 33, 3 ]
 ``` 
  
 ## Other API
@@ -251,7 +265,8 @@ import {
   flat,
   flatMap,
   lastIndex,
-  shuffle
+  shuffle,
+  findIndex,
 } from 'array-organizer';
  
 of(1, 2, 3, 4); // [1, 2, 3, 4]

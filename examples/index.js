@@ -13,7 +13,6 @@ import {
   flatMap,
   asc,
   desc,
-  preInsert,
   insert,
   replace,
   remove,
@@ -33,6 +32,10 @@ import {
   keys,
   values,
   join,
+  unshift,
+  push,
+  insertBefore,
+  insertAfter,
 } from '../lib';
 
 const { isNumber } = type;
@@ -268,9 +271,7 @@ console.log(asc({ x: 'd', y: null, z: 0xff }));
 console.log(desc([5, 3, 4, 6, 1, 2])); // [5, 3, 4, 6, 1, 2]
 console.log(desc(['d', true, undefined, 0xff, 'ee', [], 2e4, () => {}, 't', 0]));
 
-console.log(preInsert([1, 2, 3, 4], 11));
-console.log(preInsert({ xx: 22, yy: 33 }, 3));
-
+console.log(insert([1, 2, 3, 4], 1, 22));
 console.log(insert([1, 2, 3, 4], 1, 22, 44, 55));
 
 console.log(replace([1, 2, 3, 4], 2, 33, 'ADD'));
@@ -383,3 +384,17 @@ console.log(
     {}
   )
 );
+
+console.log(unshift([], 11, 22, 33));
+console.log(unshift([1, 2, 3], 11, 22, 33));
+
+console.log(push([], 11, 22, 33));
+console.log(push([1, 2, 3], 11, 22, 33));
+
+console.log(insertBefore([1, 2, 3], -1, 22, 33));
+console.log(insertBefore([1, 2, 3], 88, 22, 33));
+console.log(insertBefore([1, 2, 3], 2, 22, 33));
+
+console.log(insertAfter([1, 2, 3], -1, 22, 33));
+console.log(insertAfter([1, 2, 3], 88, 22, 33));
+console.log(insertAfter([1, 2, 3], 1, 22, 33));
