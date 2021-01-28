@@ -251,7 +251,6 @@ import {
   copyWithin,
   flat,
   flatMap,
-  lastIndex,
   shuffle,
   findIndex,
 } from 'array-organizer';
@@ -269,7 +268,7 @@ flat({ x: 1, y: 2, yy: { zz: 3 } }); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k
 flatMap(['1', [2, 3, 4], [5, 6, 7, [8, 9]]], v => v.slice(0)); // ['1', 2, 3, 4, 5, 6, 7, [8, 9]]
 flatMap(['1', [2, 3, 4]], v => [...v, 444]); // ['1', 444, 2, 3, 4, 444]
 
-// Same to [1, 2, 3, 4].length - 1
-lastIndex([1, 2, 3, 4]); // 3
 shuffle([1, 2, 3, 4]); // [3, 1, 2, 4]
+
+findIndex(['1', 2, 3], v => typeof v === 'number'); // 1
  ```
