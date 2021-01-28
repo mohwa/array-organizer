@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-811' />
-  <title>array-organizer 1.3.0 | Documentation</title>
+  <title>array-organizer 1.4.0 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet' />
   <link href='assets/style.css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div class='inner'>
         <div class='page__headline'>
           <h1 class='mb0 no-anchor page__title'><a style='color:unset' href="https://github.com/mohwa/array-organizer#readme">array-organizer</a></h1>
-          <p class='mb1 page__subtitle'><code>1.3.0</code></p>
+          <p class='mb1 page__subtitle'><code>1.4.0</code></p>
         </div>
 
         <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
@@ -171,36 +171,6 @@
                 
                   
                   <li><a
-                    href='#search'
-                    class=' ppn__menu-item'>
-                    search
-                    
-                  </a>
-                  
-                  </li>
-                
-                  
-                  <li><a
-                    href='#searchindex'
-                    class=' ppn__menu-item'>
-                    searchIndex
-                    
-                  </a>
-                  
-                  </li>
-                
-                  
-                  <li><a
-                    href='#deepsearch'
-                    class=' ppn__menu-item'>
-                    deepSearch
-                    
-                  </a>
-                  
-                  </li>
-                
-                  
-                  <li><a
                     href='#flat'
                     class=' ppn__menu-item'>
                     flat
@@ -344,16 +314,6 @@
                     href='#removeall'
                     class=' ppn__menu-item'>
                     removeAll
-                    
-                  </a>
-                  
-                  </li>
-                
-                  
-                  <li><a
-                    href='#lastindex'
-                    class=' ppn__menu-item'>
-                    lastIndex
                     
                   </a>
                   
@@ -1655,264 +1615,6 @@
     
       
       <pre class='p1 overflow-auto round fill-light'>deepFind([{ <span class="hljs-attr">x</span>: { <span class="hljs-attr">xx</span>: { <span class="hljs-attr">y</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">z</span>: <span class="hljs-string">'A'</span> } } }], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{ ... }] }</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='search'>
-      search
-    </h3>
-    
-    
-  </div>
-  
-
-  <div class="markdown-body">
-    <p>This function returns a first element found from an iterable object or a plain object</p>
-
-  </div>
-
-  <div class='pre p1 fill-light mt0'>search(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
-	    An iterable object or a plain object
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
-	    Value which will be search
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>search([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='searchindex'>
-      searchIndex
-    </h3>
-    
-    
-  </div>
-  
-
-  <div class="markdown-body">
-    <p>This function returns an index of first element found from an iterable object or a plain object</p>
-
-  </div>
-
-  <div class='pre p1 fill-light mt0'>searchIndex(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
-	    An iterable object or a plain object
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
-	    Value which will be search
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>searchIndex([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-string">'1'</span>) <span class="hljs-comment">// 0</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='deepsearch'>
-      deepSearch
-    </h3>
-    
-    
-  </div>
-  
-
-  <div class="markdown-body">
-    <p>This function returns a first element found from an iterable object or a plain object</p>
-
-  </div>
-
-  <div class='pre p1 fill-light mt0'>deepSearch(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), searchValue: any): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
-	    An iterable object or a plain object
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>searchValue</span> <code class='quiet'>(any)</code>
-	    Value which will be search
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>deepSearch([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// { c: ['1', 2, 3], k: 2, v: 3, origin: [...] }</span></pre>
     
   
 
@@ -3237,83 +2939,6 @@
     
       
       <pre class='p1 overflow-auto round fill-light'>removeAll([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">1</span>) <span class="hljs-comment">// [1]</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      
-        
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='lastindex'>
-      lastIndex
-    </h3>
-    
-    
-  </div>
-  
-
-  <div class="markdown-body">
-    <p>This function returns last index of an iterable object or a plain object</p>
-
-  </div>
-
-  <div class='pre p1 fill-light mt0'>lastIndex(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
-	    An iterable object or a plain object
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'>lastIndex([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]) <span class="hljs-comment">// 3</span></pre>
     
   
 
