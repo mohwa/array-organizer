@@ -7,8 +7,6 @@ import {
   fill,
   find,
   findIndex,
-  search,
-  searchIndex,
   flat,
   flatMap,
   asc,
@@ -17,11 +15,9 @@ import {
   replace,
   remove,
   removeAll,
-  lastIndex,
   shuffle,
   includes,
   deepFind,
-  deepSearch,
   ascBy,
   descBy,
   reduce,
@@ -247,10 +243,7 @@ console.log(find({ x: 11, y: 22, z: 33 }, ({ v }) => isNumber(v))); // 11
 
 console.log(findIndex(['1', 2, 3], v => isNumber(v))); // 1
 console.log(findIndex({ x: 11, y: 22, z: 33 }, ({ v }) => isNumber(v))); // 11
-// //
-console.log(search(['1', 2, 3], 3)); // 3
-console.log(searchIndex(['1', 2, 3], '1')); // 0
-// //
+
 console.log(flat(['1', [2, 3, 4], [5, 6, 2, [8, 9]]], 2)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(flat({ x: 1, y: 2, yy: { zz: 3 } })); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -279,7 +272,6 @@ console.log(replace([1, 2, 3, 4], 2, 33, 'ADD'));
 console.log(remove([1, 2, 3, 4], 3));
 console.log(removeAll([1, 2, 3, 4], 1));
 
-console.log(lastIndex([1, 2, 3, 4])); // 3
 console.log(shuffle([1, 2, 3, 4])); // random
 
 console.log(deepFind([{ x: { xx: { y: 3, z: 'A' } }, y: () => {} }], v => isNumber(v)));
@@ -297,17 +289,6 @@ console.log(
 // c: {yy: -20}
 // k: "yy"
 // v: -20
-console.log(
-  deepSearch(
-    [
-      { x: 1, y: [{ yy: 44 }] },
-      { x: 1, y: 5, z: { yy: 33 } },
-      { x: 1, y: 22, z: [{ xx: { zz: { yy: -20 } } }] },
-    ],
-    -20
-  )
-);
-
 console.log(
   ascBy(
     [
