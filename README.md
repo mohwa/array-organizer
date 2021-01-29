@@ -75,52 +75,38 @@ console.log(unShiftArr); // [{ xx: 4 }, { k: "x", v: 1 }, { k: "y", v: 2 }, { k:
  ```javascript
  import { toArray } from 'array-organizer';
  
- toArray(''); // []
- // for an array like object
- toArray('  '); // ['', '']
- toArray('test'); // [t, e, s, t]
- // for an iterable object
- toArray([1, 2, 3]); // [1, 2. 3]
- // for a object type
- toArray({ x: 1, y: 2, z: 3 }); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 }]
+ toArray('  '); // [ ' ', ' ' ]
+ 
+ toArray('!@#$%^&*()test'); // ['!', '@', '#','$', '%', '^','&', '*', '(',')', 't', 'e','s', 't']
+ toArray([1, 2, 3]); // [ 1, 2, 3 ]
+ 
+ toArray({ x: 1, y: 2, z: 3 }); // [ { k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 } ]
+ 
+ toArray(new Set([1, 2, 3, {}, new Map()])); // [ 1, 2, 3, {}, Map {} ]
+ 
+ toArray(new Map([['x', 1], ['y', {}], ['z', new Map()], ['s', new Set()]])); // [{ k: 'x', v: 1 },{ k: 'y', v: {} },{ k: 'z', v: Map {} },{ k: 's', v: Set {} }]
+ 
+ toArray((function*() { yield { x: 1 }; })()); // [ { x: 1 } ]
+ 
+ toArray(function(x, y) {}); // [ undefined, undefined ]
+ 
  toArray({}); // []
+ 
  toArray([]); // []
+ 
  toArray(undefined); // []
+ 
  toArray(null); // []
+ 
  toArray(true); // []
-toArray(
- [1, 2, 3],
- function(v) {
-   return { v, vv: this };
- },
- { x: 1 }
-); // [{ v: 1, vv: { x: 1 }}, { v: 2, vv: { x: 1 }}, { v: 3, vv: { x: 1 }}]
-
-function iteratorArgument() {
-  toArray(arguments); // [1, 2, 5555]
-}
-
-iteratorArgument(1, 2, 5555);
-
-// generator iterable object
-function* g() {
-  yield 1;
-}
-toArray(g()); // [1]
-
-const m = new Map();
-m.set('x', 1);
-m.set('y', 2);
-m.set('z', 3);
-
-toArray(m); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 }]
-
-const s = new Set();
-s.add(1);
-s.add(2);
-s.add(3);
-
-toArray(s); // [1, 2, 3]
+ 
+ toArray(3); // []
+ 
+ function iteratorArgument() {
+   toArray(arguments); // [1, 2, 5555]
+ }
+ iteratorArgument(1, 2, 5555);
+ //
 ```
 
 ## Main API 
@@ -155,10 +141,10 @@ import {
   insertAfter
 } from 'array-organizer';
 
-// Will be filled 7 from index 2 until end index of an array object
-fill([1, 2, 3, 4], 7, 2); // [1, 2, 7, 7]
+// Will be filled 7 from index 3 until end index of an array object
+fill([1, 2, 3, 4], 7, 3); // [1, 2, 3, 7]
 fill([1, 2, 3, 4], 7); // [7, 7, 7, 7]
-fill({ x: 11, y: 22, z: 33 }, 7, 0, 1); // [ 7, 7, {  k: 'z', v: 33 } ]
+fill({ x: 11, y: 22, z: 33 }, 7, 0, 2) ; // [ 7, 7, { k: 'z', v: 33 } ]
 
 find(['1', 2, 3], v => typeof v === 'number'); // 2
 find({ x: 11, y: 22, z: 33 }, ({ v }) => typeof v === 'number'); // { k: 'x', v: 11 }
@@ -192,32 +178,61 @@ descBy([{ x: 1, y: 11 }, { x: 2, y: 22 }, { x: 3, y: 33 }], 'y'); // [{ ...y: 33
 reduce([{ x: 1 }, { y: 2 }, { z: 3 }], (acc, v, k) => { acc[k] = v; return acc; }, {}); // { 0: { x: 1 }, 1: { y: 2 }, 2: { z: 3 } }
 
 forEach('  ', (v, k) => console.log(v)); // '', ''
-forEach('test', (v, k) => console.log(v)); // 't', 'e', 's', 't'
-forEach([1, 2, 3], (v, k) => console.log(v)); // 1, 2, 3
-forEach({ x: 1, y: 2, z: 3 }, (v) => console.log(v)); // 1, 2, 3
-forEach(new Map([['x', 1], ['y', 2], ['z', 3]]), (v) => console.log(v)); // 1, 2, 3
-forEach(new Set([1, 2, 3]), (v) => console.log(v)); // 1, 2, 3
 
-concat(
-  { x: 1, y: 2, z: 3 },
-  { xx: 1, yy: 2, zz: 3 },
-  function() {},
-  true,
-  false,
-  {},
-  [],
-  new Map([['x', 1]]),
-  new Set([11, 22, 33]),
-  'test',
-  (function*() {
-    yield 88;
-  })()
-); // [{ k: "x", v: 1 }, .... , 88]
+forEach('!@#$%^&*()test', (v, k) => console.log(v));
+
+forEach([1, 2, 3], (v, k) => console.log(v));
+
+forEach({ x: 1, y: 2, z: 3 }, (v, k) => console.log(v));
+
+forEach(new Set([1, 2, 3, {}, new Map()]), (v, k) => console.log(v));
+
+forEach(new Map([['x', 1], ['y', {}], ['z', new Map()], ['s', new Set()]]), (v, k) => console.log(v));
+
+forEach((function*() { yield { x: 1 }}), (v, k) => console.log(v));
+
+forEach(function(x, y) {}, (v, k) => console.log(v));
+
+// This data can not loop
+forEach({}, (v, k) => console.log(v));
+
+// This data can not loop
+forEach([], (v, k) => console.log(v));
+
+// This data can not loop
+forEach(undefined, (v, k) => console.log(v));
+
+// This data can not loop
+forEach(null, (v, k) => console.log(v));
+
+// This data can not loop
+forEach(true, (v, k) => console.log(v));
+
+// This data can not loop
+forEach(3, (v, k) => console.log(v));
+
+console.log(
+  concat(
+    [ { x: 1 }, { y: 2 }, { z: 3 } ],
+    { xx: 1, yy: 2, zz: 3 },
+    function() {},
+    true,
+    false,
+    {},
+    [],
+    new Map([['x', 1]]),
+    new Set([11, 22, 33]),
+    'test',
+    (function*() {
+      yield { xxx: 1 };
+    })()
+  )
+); // [{ x: 1 },{ y: 2 },{ z: 3 },{ k: 'xx', v: 1 },{ k: 'yy', v: 2 },{ k: 'zz', v: 3 },[Function],true,false,{ k: 'x', v: 1 },11,22,33,'test',{ xxx: 1 }]
 
 indexOf([1, 2, 3], 2); // 1
 indexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
 
-lastIndexOf([1, 2, 3], 2); // 1
+lastIndexOf([1, 2, 3], 3); // 2
 lastIndexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
 
 keys([1, , 3]); // [0, 1, 2]
@@ -258,9 +273,9 @@ import {
 of(1, 2, 3, 4); // [1, 2, 3, 4]
 of({ x: 1 }, { x: 2 }, { x: 3 }); // [{ x: 1 }, { x: 2 }, { x: 3 }]
 
-// Will be copied an elements from index 1 until index 2 to index 0
-copyWithin([1, '2', 3], 0, 1, 2); // ['2', 3, 3]
-copyWithin({ x: 1, y: '2', z: 3 }, 0, 1, 2); // [{ k: 'y', v: '2' }, { k: 'z', v: 3 }, { k: 'z', v: 3 }]
+// Will be copied an elements from index 1 until index 1 to index 0
+copyWithin([1, '2', 3], 0, 1, 2); // [ '2', '2', 3 ]
+copyWithin({ x: 1, y: '2', z: 3 }, 0, 1, 2); // [ { k: 'y', v: '2' }, { k: 'y', v: '2' }, { k: 'z', v: 3 } ]
 
 flat(['1', [2, 3, 4], [5, 6, 2, [8, 9]]], 2); // ['1', 2, 3, 4, 5, 6, 2, 8, 9]
 flat({ x: 1, y: 2, yy: { zz: 3 } }); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'yy', v: { zz: 3 } }]
