@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-811' />
-  <title>array-organizer 1.4.1 | Documentation</title>
+  <title>array-organizer 1.4.2 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet' />
   <link href='assets/style.css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div class='inner'>
         <div class='page__headline'>
           <h1 class='mb0 no-anchor page__title'><a style='color:unset' href="https://github.com/mohwa/array-organizer#readme">array-organizer</a></h1>
-          <p class='mb1 page__subtitle'><code>1.4.1</code></p>
+          <p class='mb1 page__subtitle'><code>1.4.2</code></p>
         </div>
 
         <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
@@ -963,7 +963,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>lastIndexOf({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">yy</span>: { <span class="hljs-attr">zz</span>: <span class="hljs-number">3</span> } }, <span class="hljs-number">44</span>) <span class="hljs-comment">// -1</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>lastIndexOf([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-number">3</span>) <span class="hljs-comment">// 2</span></pre>
     
   
 
@@ -1196,7 +1196,7 @@
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>Iterable.length</code>)</code>
-	    End index which to end copying(will be increase 1 an end index)
+	    End index which to end copying
 
           </div>
           
@@ -1223,7 +1223,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [{ k: 'y', v: '2' }, { k: 'z', v: 3 }, { k: 'z', v: 3 }]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [ { k: 'y', v: '2' }, { k: 'y', v: '2' }, { k: 'z', v: 3 } ]</span></pre>
     
   
 
@@ -1302,7 +1302,7 @@
           <div>
             <span class='code bold'>end</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>Iterable.length</code>)</code>
-	    End index(will be increase 1 an end index)
+	    End index
 
           </div>
           
@@ -1329,7 +1329,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>fill([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>], <span class="hljs-number">7</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [1, 2, 7, 7]</span></pre>
+      <pre class='p1 overflow-auto round fill-light'>fill({ <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">22</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">33</span> }, <span class="hljs-number">7</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [ 7, 7, { k: 'z', v: 33 } ]</span></pre>
     
   
 
