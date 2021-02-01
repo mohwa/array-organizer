@@ -209,22 +209,20 @@ forEach(true, (v, k) => console.log(v));
 // This data can not loop
 forEach(3, (v, k) => console.log(v));
 
-console.log(
-  concat(
-    [ { x: 1 }, { y: 2 }, { z: 3 } ],
-    { xx: 1, yy: 2, zz: 3 },
-    function() {},
-    true,
-    false,
-    {},
-    [],
-    new Map([['x', 1]]),
-    new Set([11, 22, 33]),
-    'test',
-    (function*() {
-      yield { xxx: 1 };
-    })()
-  )
+concat(
+[ { x: 1 }, { y: 2 }, { z: 3 } ],
+{ xx: 1, yy: 2, zz: 3 },
+function() {},
+true,
+false,
+{},
+[],
+new Map([['x', 1]]),
+new Set([11, 22, 33]),
+'test',
+(function*() {
+  yield { xxx: 1 };
+})()
 ); // [{ x: 1 },{ y: 2 },{ z: 3 },{ k: 'xx', v: 1 },{ k: 'yy', v: 2 },{ k: 'zz', v: 3 },[Function],true,false,{ k: 'x', v: 1 },11,22,33,'test',{ xxx: 1 }]
 
 indexOf([1, 2, 3], v => v === 2); // 1
