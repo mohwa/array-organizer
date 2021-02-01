@@ -14,7 +14,6 @@ import {
   insert,
   replace,
   remove,
-  removeAll,
   shuffle,
   includes,
   deepFind,
@@ -30,8 +29,6 @@ import {
   join,
   unshift,
   push,
-  insertBefore,
-  insertAfter,
 } from '../lib';
 
 const { isNumber } = type;
@@ -170,11 +167,15 @@ try {
   console.log(e.message);
 }
 
-console.log(indexOf([1, 2, 3], 2)); // 1
-console.log(indexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44)); // -1
+console.log(indexOf([1, 2, 3], vv => vv === 2)); // 1
+console.log(indexOf([1, 2, 3], vv => vv === 2, -2)); // 1
+console.log(indexOf([1, 2, 3], vv => vv === 2, 2)); // -1
+console.log(indexOf([1, 2, 3], vv => vv === 2, 100)); // -1
 
-console.log(lastIndexOf([1, 2, 3], 2)); // 1
-console.log(lastIndexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44)); // -1
+console.log(lastIndexOf([1, 2, 3], vv => vv === 2)); // 1
+console.log(lastIndexOf({ x: 1, y: 2, yy: { zz: 3 }, zz: 44 }, vv => vv === 44, 2)); // -1
+console.log(lastIndexOf({ x: 1, y: 2, yy: { zz: 3 }, zz: 44 }, vv => vv === 44, 100)); // 3
+console.log(lastIndexOf({ x: 1, y: 2, yy: { zz: 3 }, zz: 44 }, vv => vv === 44, -2)); // -1
 
 console.log(toArray('')); // []
 console.log(toArray('  ')); // ['', '']
@@ -250,8 +251,8 @@ console.log(flat({ x: 1, y: 2, yy: { zz: 3 } })); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log(flatMap(['1', [2, 3, 4], [5, 6, 7, [8, 9]]], v => v.slice(0))); // [1, 2, 3, 4, 5, 6, 7, [8, 9]]
 console.log(flatMap(['1', [2, 3, 4]], v => [...v, 444])); // ["1", 444, 2, 3, 4, 444]
 
-console.log(includes([1, 2, 3], 2));
-console.log(includes({ x: 1, y: 2, yy: { zz: 3 } }, 44));
+console.log(includes([1, 2, 3], vv => vv === 2)); // true
+console.log(includes({ x: 1, y: 2, yy: { zz: 3 } }, vv => vv === 44)); // false
 
 try {
   console.log(asc(['d', null, 0xff, true, { x: 1 }, 'ee', new Map(), 't', 0]));
@@ -269,8 +270,8 @@ console.log(insert([1, 2, 3, 4], 1, 22, 44, 55));
 
 console.log(replace([1, 2, 3, 4], 2, 33, 'ADD'));
 
-console.log(remove([1, 2, 3, 4], 3));
-console.log(removeAll([1, 2, 3, 4], 1));
+console.log(remove(['1', 2, 3, 4], vv => typeof vv === 'number')); // ['1']
+console.log(remove(['1', 2, 3, 4], vv => typeof vv === 'string')); // [2, 3, 4]
 
 console.log(shuffle([1, 2, 3, 4])); // random
 
@@ -371,11 +372,3 @@ console.log(unshift([1, 2, 3], 11, 22, 33));
 
 console.log(push([], 11, 22, 33));
 console.log(push([1, 2, 3], 11, 22, 33));
-
-console.log(insertBefore([1, 2, 3], -1, 22, 33));
-console.log(insertBefore([1, 2, 3], 88, 22, 33));
-console.log(insertBefore([1, 2, 3], 2, 22, 33));
-
-console.log(insertAfter([1, 2, 3], -1, 22, 33));
-console.log(insertAfter([1, 2, 3], 88, 22, 33));
-console.log(insertAfter([1, 2, 3], 1, 22, 33));

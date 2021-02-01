@@ -122,7 +122,6 @@ import {
   insert,
   replace,
   remove,
-  removeAll,
   includes,
   deepFind,
   ascBy,
@@ -137,8 +136,6 @@ import {
   join,
   unshift,
   push,
-  insertBefore,
-  insertAfter
 } from 'array-organizer';
 
 // Will be filled 7 from index 3 until end index of an array object
@@ -161,12 +158,12 @@ insert([1, 2, 3, 4], 1, 22); // [1, 22, 2, 3, 4]
 // Will be inserted a 22 to index 1 and add 'ADD'
 replace([1, 2, 3, 4], 2, 33, 'ADD'); // [1, 2, 33, 'ADD', 4]
 
-remove([1, 2, 3, 4], 3); // [1, 2, 3]
-removeAll([1, 2, 3, 4], 1); // [1]
+remove(['1', 2, 3, 4], (vv) => typeof vv === 'number'); // ['1']
+remove(['1', 2, 3, 4], (vv) => typeof vv === 'string'); // [2, 3, 4]
 
 // Will be found a 2 from an array object 
-includes([1, 2, 3], 2); // true
-includes({ x: 1, y: 2, yy: { zz: 3 } }, 44); // false
+includes([1, 2, 3], vv => vv === 2); // true
+includes({ x: 1, y: 2, yy: { zz: 3 } }, vv => vv === 44); // false
 
 // In result c is container object of y property
 deepFind([{ x: { xx: { y: 3, z: 'A' } } }], v => typeof v === 'number'); // { c: { y: 3, z: 'A' }, k: 'y', v: 3, origin: [{ ... }] }
@@ -229,11 +226,11 @@ console.log(
   )
 ); // [{ x: 1 },{ y: 2 },{ z: 3 },{ k: 'xx', v: 1 },{ k: 'yy', v: 2 },{ k: 'zz', v: 3 },[Function],true,false,{ k: 'x', v: 1 },11,22,33,'test',{ xxx: 1 }]
 
-indexOf([1, 2, 3], 2); // 1
-indexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
+indexOf([1, 2, 3], vv => vv === 2); // 1
+indexOf([1, 2, 3], vv => vv === 2, 2); // -1
 
-lastIndexOf([1, 2, 3], 3); // 2
-lastIndexOf({ x: 1, y: 2, yy: { zz: 3 } }, 44); // -1
+lastIndexOf([1, 2, 3], vv => vv === 2); // 1
+lastIndexOf({ x: 1, y: 2, yy: { zz: 3 }, zz: 44 }, vv => vv === 44, 2); // -1
 
 keys([1, , 3]); // [0, 1, 2]
 keys({ x: 1, y: 2, z: 3 }); // ['x', 'y', 'z']
@@ -248,14 +245,6 @@ unshift([1, 2, 3], 11, 22, 33); // [ 11, 22, 33, 1, 2, 3 ]
 
 push([], 11, 22, 33); // [ 11, 22, 33 ]
 push([1, 2, 3], 11, 22, 33); // [ 1, 2, 3, 11, 22, 33 ]
-
-insertBefore([1, 2, 3], -1, 22, 33); // [ 22, 33, 1, 2, 3 ]
-insertBefore([1, 2, 3], 88, 22, 33); // [ 1, 2, 3, 22, 33 ]
-insertBefore([1, 2, 3], 2, 22, 33); // [ 1, 22, 33, 2, 3 ]
-
-insertAfter([1, 2, 3], -1, 22, 33); // [ 22, 33, 1, 2, 3 ]
-insertAfter([1, 2, 3], 88, 22, 33); // [ 1, 2, 3, 22, 33 ]
-insertAfter([1, 2, 3], 1, 22, 33); // [ 1, 2, 22, 33, 3 ]
 ``` 
  
 ## Other API
