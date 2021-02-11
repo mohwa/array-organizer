@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-811' />
-  <title>array-organizer 1.5.3 | Documentation</title>
+  <title>array-organizer 1.5.4 | Documentation</title>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet' />
   <link href='assets/style.css' rel='stylesheet' />
@@ -15,7 +15,7 @@
       <div class='inner'>
         <div class='page__headline'>
           <h1 class='mb0 no-anchor page__title'><a style='color:unset' href="https://github.com/mohwa/array-organizer#readme">array-organizer</a></h1>
-          <p class='mb1 page__subtitle'><code>1.5.3</code></p>
+          <p class='mb1 page__subtitle'><code>1.5.4</code></p>
         </div>
 
         <a id='menu-toggle' href='#prime-nav' title='Show/hide menu' class='menu-toggle'><span>Browse</span></a>
@@ -34,6 +34,16 @@
                     href='#foreach'
                     class=' ppn__menu-item'>
                     forEach
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#toarrayall'
+                    class=' ppn__menu-item'>
+                    toArrayAll
                     
                   </a>
                   
@@ -124,6 +134,36 @@
                     href='#copywithin'
                     class=' ppn__menu-item'>
                     copyWithin
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#filter'
+                    class=' ppn__menu-item'>
+                    filter
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#every'
+                    class=' ppn__menu-item'>
+                    every
+                    
+                  </a>
+                  
+                  </li>
+                
+                  
+                  <li><a
+                    href='#some'
+                    class=' ppn__menu-item'>
+                    some
                     
                   </a>
                   
@@ -398,6 +438,101 @@
     
       
       <pre class='p1 overflow-auto round fill-light'>forEach(<span class="hljs-string">'test'</span>, (v, k) =&gt; <span class="hljs-built_in">console</span>.log(v)); <span class="hljs-comment">// 't', 'e', 's', 't'</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='toarrayall'>
+      toArrayAll
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function converts an any value to new an array object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>toArrayAll(v: any, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    An any value
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?)</code>
+	    Function which will be call on every element of an iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
+	    Value which will be use as context(this) when executed callback function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>toArrayAll(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// [undefined]</span></pre>
     
   
 
@@ -1194,6 +1329,291 @@
     
       
       <pre class='p1 overflow-auto round fill-light'>copyWithin({ <span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">z</span>: <span class="hljs-number">3</span> }, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// [ { k: 'y', v: '2' }, { k: 'y', v: '2' }, { k: 'z', v: 3 } ]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='filter'>
+      filter
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function filters given an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>filter(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?)</code>
+	    Function which will be call on every element of an iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
+	    Value which will be use as context(this) when executed callback function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>filter([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// [2, 3]</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='every'>
+      every
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function returns a true when match condition of callback function to every elements of an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>every(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?)</code>
+	    Function which will be call on every element of an iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
+	    Value which will be use as context(this) when executed callback function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>every([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// true</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+      
+        
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='some'>
+      some
+    </h3>
+    
+    
+  </div>
+  
+
+  <div class="markdown-body">
+    <p>This function returns a true when match condition of callback function to some elements of an iterable object or a plain object</p>
+
+  </div>
+
+  <div class='pre p1 fill-light mt0'>some(v: (Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?, context: any?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>((Iterable | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+	    An iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>?)</code>
+	    Function which will be call on every element of an iterable object or a plain object
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>context</span> <code class='quiet'>(any?)</code>
+	    Value which will be use as context(this) when executed callback function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>some([<span class="hljs-string">'1'</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], v =&gt; <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">'number'</span>) <span class="hljs-comment">// true</span></pre>
     
   
 
