@@ -29,6 +29,10 @@ import {
   join,
   unshift,
   push,
+  toArrayAll,
+  filter,
+  every,
+  some,
 } from '../lib';
 
 const { isNumber } = type;
@@ -373,3 +377,56 @@ console.log(unshift([1, 2, 3], 11, 22, 33));
 
 console.log(push([], 11, 22, 33));
 console.log(push([1, 2, 3], 11, 22, 33));
+
+console.log(toArrayAll('1')); // ['1']
+console.log(toArrayAll(1)); // [1]
+console.log(toArrayAll(true)); // [true]
+console.log(toArrayAll(undefined)); // [undefined]
+console.log(toArrayAll(null)); // [null]
+console.log(toArrayAll(Symbol(3))); // [Symbol(3)]
+console.log(toArrayAll(function() {})); // [[Function]]
+console.log(toArrayAll('')); // ['']
+console.log(toArrayAll('  ')); // ['', '']
+console.log(toArrayAll([1, 2, 3])); // [1, 2, 3]
+console.log(toArrayAll({ x: 1, y: 2, z: 3 })); // [{ k: 'x', v: 1}, { k: 'y', v: 2}, { k: 'z', v: 3}]
+console.log(toArrayAll({})); // []
+console.log(toArrayAll([])); // []
+
+console.log(filter(['1', 2, 3], v => typeof v === 'number')); // [2, 3]
+console.log(filter(new Set(['1', 2, 3]), v => typeof v === 'number')); // [2, 3]
+console.log(
+  filter(
+    new Map([
+      ['x', 1],
+      ['y', 2],
+    ]),
+    ({ v }) => typeof v === 'number'
+  )
+); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }]
+
+console.log(every(['1', 2, 3], v => typeof v === 'number')); // false
+console.log(every([1, 2, 3], v => typeof v === 'number')); // true
+console.log(every(new Set(['1', 2, 3]), v => typeof v === 'number')); // false
+console.log(
+  every(
+    new Map([
+      ['x', 1],
+      ['y', '2'],
+    ]),
+    ({ v }) => typeof v === 'number'
+  )
+); // false
+
+console.log(some(['1', 2, 3], v => typeof v === 'number')); // true
+console.log(some([1, 2, 3], v => typeof v === 'number')); // true
+console.log(some(new Set(['1', 2, 3]), v => typeof v === 'number')); // true
+console.log(
+  some(
+    new Map([
+      ['x', 1],
+      ['y', '2'],
+    ]),
+    ({ v }) => typeof v === 'number'
+  )
+); // true
+console.log(some(['1', '2', '3'], v => typeof v === 'number')); // false

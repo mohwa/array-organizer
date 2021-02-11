@@ -68,45 +68,59 @@ unShiftArr.unshift({ xx: 4 });
 console.log(unShiftArr); // [{ xx: 4 }, { k: "x", v: 1 }, { k: "y", v: 2 }, { k: "z", v: 3 }]
 ```
  
-## toArray
+## toArray, toArrayAll
  
  This api will be able to convert iterable object of all types to new an array object
  
  ```javascript
- import { toArray } from 'array-organizer';
+import { toArray, toArrayAll } from 'array-organizer';
  
- toArray('  '); // [ ' ', ' ' ]
+toArray('  '); // [ ' ', ' ' ]
  
- toArray('!@#$%^&*()test'); // ['!', '@', '#','$', '%', '^','&', '*', '(',')', 't', 'e','s', 't']
- toArray([1, 2, 3]); // [ 1, 2, 3 ]
+toArray('!@#$%^&*()test'); // ['!', '@', '#','$', '%', '^','&', '*', '(',')', 't', 'e','s', 't']
+toArray([1, 2, 3]); // [ 1, 2, 3 ]
  
- toArray({ x: 1, y: 2, z: 3 }); // [ { k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 } ]
+toArray({ x: 1, y: 2, z: 3 }); // [ { k: 'x', v: 1 }, { k: 'y', v: 2 }, { k: 'z', v: 3 } ]
  
- toArray(new Set([1, 2, 3, {}, new Map()])); // [ 1, 2, 3, {}, Map {} ]
+toArray(new Set([1, 2, 3, {}, new Map()])); // [ 1, 2, 3, {}, Map {} ]
  
- toArray(new Map([['x', 1], ['y', {}], ['z', new Map()], ['s', new Set()]])); // [{ k: 'x', v: 1 },{ k: 'y', v: {} },{ k: 'z', v: Map {} },{ k: 's', v: Set {} }]
+toArray(new Map([['x', 1], ['y', {}], ['z', new Map()], ['s', new Set()]])); // [{ k: 'x', v: 1 },{ k: 'y', v: {} },{ k: 'z', v: Map {} },{ k: 's', v: Set {} }]
  
- toArray((function*() { yield { x: 1 }; })()); // [ { x: 1 } ]
+toArray((function*() { yield { x: 1 }; })()); // [ { x: 1 } ]
  
- toArray(function(x, y) {}); // [ undefined, undefined ]
+toArray(function(x, y) {}); // [ undefined, undefined ]
  
- toArray({}); // []
+toArray({}); // []
  
- toArray([]); // []
+toArray([]); // []
  
- toArray(undefined); // []
+toArray(undefined); // []
  
- toArray(null); // []
+toArray(null); // []
  
- toArray(true); // []
+toArray(true); // []
  
- toArray(3); // []
+toArray(3); // []
  
- function iteratorArgument() {
-   toArray(arguments); // [1, 2, 5555]
- }
- iteratorArgument(1, 2, 5555);
- //
+function iteratorArgument() {
+  toArray(arguments); // [1, 2, 5555]
+}
+iteratorArgument(1, 2, 5555);
+
+// toArrayAll converts an any element unlike a toArray
+toArrayAll('1'); // ['1']
+toArrayAll(1); // [1]
+toArrayAll(true); // [true]
+toArrayAll(undefined); // [undefined]
+toArrayAll(null); // [null]
+toArrayAll(Symbol(3)); // [Symbol(3)]
+toArrayAll(function(){}); // [[Function]]
+toArrayAll(''); // ['']
+toArrayAll('  '); // ['', '']
+toArrayAll([1, 2, 3]); // [1, 2, 3]
+toArrayAll({ x: 1, y: 2, z: 3 }); // [{ k: 'x', v: 1}, { k: 'y', v: 2}, { k: 'z', v: 3}]
+toArrayAll({}); // []
+toArrayAll([]); // []
 ```
 
 ## Main API 
@@ -136,6 +150,9 @@ import {
   join,
   unshift,
   push,
+  filter, 
+  some,
+  every
 } from 'array-organizer';
 
 // Will be filled 7 from index 3 until end index of an array object
@@ -245,6 +262,21 @@ unshift([1, 2, 3], 11, 22, 33); // [ 11, 22, 33, 1, 2, 3 ]
 
 push([], 11, 22, 33); // [ 11, 22, 33 ]
 push([1, 2, 3], 11, 22, 33); // [ 1, 2, 3, 11, 22, 33 ]
+
+filter(['1', 2, 3], v => typeof v === 'number'); // [2, 3]
+filter(new Set(['1', 2, 3]), v => typeof v === 'number'); // [2, 3]
+filter(new Map([['x', 1], ['y', 2]]), ({ v }) => typeof v === 'number'); // [{ k: 'x', v: 1 }, { k: 'y', v: 2 }]
+
+every(['1', 2, 3], v => typeof v === 'number'); // false
+every([1, 2, 3], v => typeof v === 'number'); // true
+every(new Set(['1', 2, 3]), v => typeof v === 'number'); // false
+every(new Map([['x', 1], ['y', '2']]), ({ v }) => typeof v === 'number'); // false
+
+some(['1', 2, 3], v => typeof v === 'number'); // true
+some([1, 2, 3], v => typeof v === 'number'); // true
+some(new Set(['1', 2, 3]), v => typeof v === 'number'); // true
+some(new Map([['x', 1], ['y', '2']]), ({ v }) => typeof v === 'number'); // true
+some(['1', '2', '3'], v => typeof v === 'number'); // false
 ``` 
  
 ## Other API
