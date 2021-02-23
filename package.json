@@ -99,5 +99,8 @@
     "> 1%",
     "last 2 version",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "docsify-darklight-theme": "^3.0.6"
+  }
 }

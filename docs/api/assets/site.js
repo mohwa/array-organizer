@@ -122,23 +122,23 @@ split_left.style.overflow = '';
 // - Scrollbar width (cw_with_sb - cw_without_sb), if it takes up existing
 //   space (Firefox) rather than adding the scrollbar to the side (Chrome)
 var percent_left =
-  (split_left.getBoundingClientRect().width + 10 + cw_without_sb - cw_with_sb) /
-  split_parent.getBoundingClientRect().width *
+  ((split_left.getBoundingClientRect().width + 10 + cw_without_sb - cw_with_sb) /
+    split_parent.getBoundingClientRect().width) *
   100;
 
 Split(['#split-left', '#split-right'], {
   elementStyle: function(dimension, size, gutterSize) {
     return {
-      'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)'
+      'flex-basis': 'calc(' + size + '% - ' + gutterSize + 'px)',
     };
   },
   gutterStyle: function(dimension, gutterSize) {
     return {
-      'flex-basis': gutterSize + 'px'
+      'flex-basis': gutterSize + 'px',
     };
   },
   gutterSize: 32,
-  sizes: [percent_left, 100 - percent_left]
+  sizes: [percent_left, 100 - percent_left],
 });
 
 // Chrome doesn't remember scroll position properly so do it ourselves.
@@ -148,7 +148,7 @@ function updateState() {
   history.replaceState(
     {
       left_top: split_left.scrollTop,
-      right_top: split_right.scrollTop
+      right_top: split_right.scrollTop,
     },
     document.title
   );

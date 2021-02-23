@@ -19,7 +19,7 @@ documentation.lint(filePaths, { shallow: true }).then(lintOutput => {
       .then(output => {
         const reader = streamArray(output);
 
-        reader.pipe(vfs.dest('./docs'));
+        reader.pipe(vfs.dest('./docs/api'));
         reader.on('end', () => {
           const lastCommandArgs = [['pull'], ['commit', '-am', '"Update new doc"'], ['push', '--force']];
 
