@@ -16,7 +16,7 @@
  
 - Supports various platforms
 
-### Documentation
+### API Documentation
 
 http://mohwa.github.io/array-organizer/api
 

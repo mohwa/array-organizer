@@ -1,6 +1,6 @@
 {
   "name": "array-organizer",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "This library will be used to handling data of an array type",
   "keywords": [
     "array",
@@ -17,6 +17,7 @@
   "scripts": {
     "start": "npm run clean && rollup -c ./build/rollup.config.test.js -w",
     "start:node": "babel-node ./examples",
+    "start:doc": "docsify serve ./docs",
     "build": "npm run clean && rollup -c ./build/rollup.config.js && npx tsc && npm run clean:tsc",
     "deploy": "npm run lint && npm run build && npm run doc && npm publish && npm run clean",
     "test": "jest --config jest.config.js",
@@ -45,7 +46,7 @@
     "README.md",
     "LICENSE.md"
   ],
-  "homepage": "https://github.com/mohwa/array-organizer#readme",
+  "homepage": "http://mohwa.github.io/array-organizer",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
