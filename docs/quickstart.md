@@ -4,7 +4,7 @@
  npm install array-organizer
  ```
 
-# How to usage
+# Simple How to usage
 
 ```javascript
 import { 
@@ -24,3 +24,8 @@ replace([1, 2, 3, 4], 2, 33, 'ADD'); // [1, 2, 33, 'ADD', 4]
 // Will be removed some elements with the number type
 remove(['1', 2, 3, 4], v => typeof v === 'number'); // ['1']
 ```
+
+# API Documentation
+
+http://mohwa.github.io/array-organizer/api
+
