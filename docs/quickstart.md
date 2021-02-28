@@ -4,7 +4,7 @@
  npm install array-organizer
  ```
 
-# Simple How to usage
+# Simple Usage
 
 ```javascript
 import { 
