@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { type } from 'emnida';
+import { isNumber } from 'emnida';
 import {
   toArray,
   of,
@@ -34,8 +34,6 @@ import {
   every,
   some,
 } from '../lib';
-
-const { isNumber } = type;
 
 forEach('', (v, k) => {
   console.log(v, k);
