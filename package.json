@@ -59,6 +59,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.0.6",
     "cross-env": "^6.0.3",
+    "docsify-cli": "^4.4.3",
     "docsify-darklight-theme": "^3.0.6",
     "documentation": "^13.1.0",
     "documentation-devseed-theme": "git://github.com/mohwa/documentation-devseed-theme.git",
