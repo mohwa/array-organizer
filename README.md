@@ -8,7 +8,7 @@
  npm install array-organizer
  ```
 
-### How to use
+# How to use
 
 ```javascript
 import { 
